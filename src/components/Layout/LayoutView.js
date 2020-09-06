@@ -20,6 +20,8 @@ import SelectedCases from '../../pages/selectedCases/selectedCasesController';
 import SelectedFiles from '../../pages/selectedFiles/selectedFilesController';
 import Home from '../../pages/landing/landingController';
 import About from '../../pages/about/aboutController';
+import Example from '../../pages/example/example';
+
 import DataDictonary from '../../pages/dataDictionary/dataDictonaryController';
 import Programs from '../../pages/programs/programsController';
 import ProgramDetail from '../../pages/programDetail/programDetailController';
@@ -51,6 +53,8 @@ const Layout = ({ classes, isSidebarOpened }) => (
             <Route path="/programs" component={Programs} />
             <Route path="/model" component={modelPage} />
             <Route path="/table" component={table} />
+            <Route path="/example" component={Example} />
+
             <Route path="/myCases" component={SelectedCases} />
             <Route path="/myCasesFiles" component={SelectedFiles} />
 
