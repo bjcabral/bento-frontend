@@ -5,7 +5,9 @@ import {
 import { useTheme } from '../../components/ThemeContext';
 import Widget from '../../components/Widgets/WidgetView';
 import Stats from '../../components/Stats/DashboardStatsController';
-import Cases from './caseTable/caseController';
+// import Cases from './caseTable/caseController';
+import Cases from '../serverPaginatedTable/serverPaginatedTableController';
+
 // import PositionedSnackbar from '../../components/Disclaimer/DisclaimerView';
 import ProgramSunburst from '../../components/Widgets/PieCharts/ProgramSunburst/ProgramSunburstController';
 import CustomActiveDonut from '../../components/Widgets/PieCharts/CustomActiveDonut/CustomActiveDonutController';

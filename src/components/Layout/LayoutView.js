@@ -20,7 +20,7 @@ import SelectedCases from '../../pages/selectedCases/selectedCasesController';
 import SelectedFiles from '../../pages/selectedFiles/selectedFilesController';
 import Home from '../../pages/landing/landingController';
 import About from '../../pages/about/aboutController';
-import Example from '../../pages/example/example';
+import Example from '../../pages/serverPaginatedTable/serverPaginatedTableController';
 
 import DataDictonary from '../../pages/dataDictionary/dataDictonaryController';
 import Programs from '../../pages/programs/programsController';

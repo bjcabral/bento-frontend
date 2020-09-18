@@ -5,17 +5,18 @@ import ReactDOM from 'react-dom';
 import { CircularProgress, Typography } from '@material-ui/core';
 import { CustomDataTable } from 'bento-components';
 
+
 class Example extends React.Component {
   state = {
     page: 0,
     count: 1,
-    rowsPerPage: 5,
+    rowsPerPage: 10,
     sortOrder: {},
     data: [['Loading Data...']],
     columns: [
       {
-        name: 'fullName',
-        label: 'Full Name',
+        name: 'subject_id',
+        label: 'Case ID',
         options: {
           customBodyRender: (value, tableMeta, updateValue) => {
             // Here you can render a more complex display.
@@ -30,13 +31,53 @@ class Example extends React.Component {
         },
       },
       {
-        name: 'title',
-        label: 'Title',
+        name: 'program',
+        label: 'Program',
         options: {},
       },
       {
-        name: 'location',
-        label: 'Location',
+        name: 'program_id',
+        label: 'program_id',
+        options: {},
+      },
+      {
+        name: 'study_acronym',
+        label: 'Arm',
+        options: {},
+      },
+      {
+        name: 'diagnosis',
+        label: 'Diagnosis',
+        options: {},
+      },
+      {
+        name: 'recurrence_score',
+        label: 'Recurrence Score',
+        options: {},
+      },
+      {
+        name: 'tumor_size',
+        label: 'Tumor Size (cm)',
+        options: {},
+      },
+      {
+        name: 'er_status',
+        label: 'ER Status',
+        options: {},
+      },
+      {
+        name: 'pr_status',
+        label: 'PR Status',
+        options: {},
+      },
+      {
+        name: 'age_at_index',
+        label: 'Age (years)',
+        options: {},
+      },
+      {
+        name: 'survival_time',
+        label: 'Survival (days)',
         options: {},
       },
     ],
@@ -45,6 +86,11 @@ class Example extends React.Component {
 
   componentDidMount() {
     this.getData('', 0);
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.data !== prevProps.data) {
+      this.getData('', 0);
+    }
   }
 
   // get data
@@ -55,31 +101,7 @@ class Example extends React.Component {
     });
   }
 
-  getSrcData = () => [
-    { fullName: 'Gabby George', title: 'Business Analyst', location: 'Minneapolis' },
-    { fullName: 'Aiden Lloyd', title: 'Business Consultant', location: 'Dallas' },
-    { fullName: 'Jaden Collins', title: 'Attorney', location: 'Santa Ana' },
-    { fullName: 'Franky Rees', title: 'Business Analyst', location: 'St. Petersburg' },
-    { fullName: 'Aaren Rose', title: 'Business Analyst', location: 'Toledo' },
-
-    { fullName: 'John George', title: 'Business Analyst', location: 'Washington DC' },
-    { fullName: 'Pat Lloyd', title: 'Computer Programmer', location: 'Baltimore' },
-    { fullName: 'Joe Joe Collins', title: 'Attorney', location: 'Las Cruces' },
-    { fullName: 'Franky Hershy', title: 'Paper Boy', location: 'El Paso' },
-    { fullName: 'Aaren Smalls', title: 'Business Analyst', location: 'Tokyo' },
-
-    { fullName: 'Boogie G', title: 'Police Officer', location: 'Unknown' },
-    { fullName: 'James Roulf', title: 'Business Consultant', location: 'Video Game Land' },
-    { fullName: 'Mike Moocow', title: 'Burger King Employee', location: 'New York' },
-    { fullName: 'Mimi Gerock', title: 'Business Analyst', location: 'McCloud' },
-    { fullName: 'Jason Evans', title: 'Business Analyst', location: 'Mt Shasta' },
-
-    { fullName: 'Simple Sam', title: 'Business Analyst', location: 'Mt Shasta' },
-    { fullName: 'Marky Mark', title: 'Business Consultant', location: 'Las Cruces' },
-    { fullName: 'Jaden Jam', title: 'Attorney', location: 'El Paso' },
-    { fullName: 'Holly Jo', title: 'Business Analyst', location: 'St. Petersburg' },
-    { fullName: 'Suzie Q', title: 'Business Analyst', location: 'New York' },
-  ]
+  getSrcData = () => this.props.data;
 
   sort = (page, sortOrder) => {
     this.setState({ isLoading: true });
@@ -97,7 +119,7 @@ class Example extends React.Component {
   // mock async function
   xhrRequest = (url, page, sortOrder = {}) => new Promise((resolve, reject) => {
     // mock page data
-    let fullData = this.getSrcData();
+    let fullData = this.getSrcData() !== {} ? this.getSrcData() : [{}];
     const total = fullData.length; // mock record count from server - normally this would be a number attached to the return data
 
     const sortField = sortOrder.name;
@@ -139,6 +161,16 @@ class Example extends React.Component {
     });
   };
 
+  updateData = (page, sortOrder) => {
+    this.setState({
+      isLoading: true,
+    });
+    this.setState({
+      isLoading: false,
+      data: this.getSrcData(),
+    });
+  };
+
   render() {
     const {
       data, page, count, isLoading, rowsPerPage, sortOrder,
@@ -147,7 +179,7 @@ class Example extends React.Component {
     const options = {
       filter: true,
       filterType: 'dropdown',
-      responsive: 'vertical',
+      responsive: 'stacked',
       serverSide: true,
       count,
       rowsPerPage,
@@ -166,6 +198,12 @@ class Example extends React.Component {
           case 'sort':
             this.sort(tableState.page, tableState.sortOrder);
             break;
+          case 'propsUpdate':
+            // this.updateData(tableState.page, tableState.sortOrder);
+            console.log(tableState);
+            console.log(this.getSrcData());
+            console.log('action not handled.');
+            break;
           default:
             console.log('action not handled.');
         }
@@ -180,7 +218,7 @@ class Example extends React.Component {
         <CustomDataTable
           title={(
             <Typography variant="h6">
-              ACME Employee list
+              Cases
               {isLoading && <CircularProgress size={24} style={{ marginLeft: 15, position: 'relative', top: 4 }} />}
             </Typography>
 )}
