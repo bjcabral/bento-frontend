@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CustomToolbar from './CustomToolbar';
 import { CircularProgress, Typography } from '@material-ui/core';
 import { CustomDataTable } from 'bento-components';
 
@@ -25,7 +26,6 @@ class Example extends React.Component {
             // See the console for a detailed look at this object.
 
             console.log('customBodyRender');
-            console.dir(tableMeta);
             return value;
           },
         },
@@ -185,8 +185,9 @@ class Example extends React.Component {
       rowsPerPage,
       rowsPerPageOptions: [],
       sortOrder,
+      customToolbar: () => <CustomToolbar fullData = {this.getSrcData() !== {} ? this.getSrcData() : [{}]} />,
       onTableChange: (action, tableState) => {
-        console.log(action, tableState);
+        // console.log(action, tableState);
 
         // a developer could react to change on an action basis or
         // examine the state as a whole and do whatever they want
@@ -197,12 +198,6 @@ class Example extends React.Component {
             break;
           case 'sort':
             this.sort(tableState.page, tableState.sortOrder);
-            break;
-          case 'propsUpdate':
-            // this.updateData(tableState.page, tableState.sortOrder);
-            console.log(tableState);
-            console.log(this.getSrcData());
-            console.log('action not handled.');
             break;
           default:
             console.log('action not handled.');
