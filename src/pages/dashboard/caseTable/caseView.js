@@ -6,14 +6,16 @@ import {
 } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CustomDataTable } from 'bento-components';
+// import { CustomDataTable } from 'bento-components';
 import Snackbar from '@material-ui/core/Snackbar';
+import CaseView from '../../serverPaginatedTable/serverPaginatedTable';
+
 // import { Link } from 'react-router-dom';
 import { dashboardTable, externalLinkIcon } from '../../../bento/dashboardData';
 import manipultateLinks from '../../../utils/helpers';
 import SuccessOutlinedIcon from '../../../utils/SuccessOutlined';
 import { cartSelectionMessages } from '../../../bento/cartWorkflowData';
-import CustomFooter from './customFooter';
+// import CustomFooter from './customFooter';
 import { toggleCheckBox } from '../dashboardState';
 import { receiveCases } from '../../selectedCases/selectedCasesState';
 
@@ -76,12 +78,12 @@ const Cases = ({ classes, data }) => {
   const saveButton = useRef(null);
 
   useEffect(() => {
-    saveButton.current.disabled = true;
-    saveButton.current.style.color = '#FFFF';
+    saveButton.current.disabled = false;
+    saveButton.current.style.color = '#FFFFFF';
     saveButton.current.style.backgroundColor = '#10A075';
-    saveButton.current.style.opacity = '0.3';
-    saveButton.current.style.fontWeight = '600';
-    saveButton.current.style.cursor = 'auto';
+    saveButton.current.style.cursor = 'pointer';
+    saveButton.current.style.opacity = 'unset';
+    saveButton.current.style.border = 'unset';
   });
 
   const displayFalseTableColumns = dashboardTable.tableData
@@ -167,27 +169,32 @@ const Cases = ({ classes, data }) => {
       const selectedKeys = Object.keys(selectedRows.data).map((keyVlaue) => (
         selectedRows.data[keyVlaue].index
       ));
+      const selectedCaseId1 = selectedKeys.map((keyVlaue) => (
+        displayData[keyVlaue].data[dashboardTable.tableData.findIndex(
+          (p) => p.primary === true,
+        )]));
+      console.log(selectedCaseId1);
       const selectedCaseId = selectedKeys.map((keyVlaue) => (
         displayData[keyVlaue].data[dashboardTable.tableData.findIndex(
           (p) => p.primary === true,
-        )].props.children.props.children
+        )]
       ));
       selectedCaseIds = selectedCaseId;
       return '';
     },
-    customFooter: (count, page, rowsPerPage, changeRowsPerPage, changePage) => (
-      <CustomFooter
-        text="SAVE TO MY CASES"
-        onClick={() => exportCases(dispatch)}
-        classes={classes}
-        count={count}
-        page={page}
-        rowsPerPage={rowsPerPage}
-        onChangeRowsPerPage={(event) => changeRowsPerPage(event.target.value)}
-      // eslint-disable-next-line no-shadow
-        onChangePage={(_, page) => changePage(page)}
-      />
-    ),
+    // customFooter: (count, page, rowsPerPage, changeRowsPerPage, changePage) => (
+    //   <CustomFooter
+    //     text="SAVE TO MY CASES"
+    //     onClick={() => exportCases(dispatch)}
+    //     classes={classes}
+    //     count={count}
+    //     page={page}
+    //     rowsPerPage={rowsPerPage}
+    //     // onChangeRowsPerPage={(event) => changeRowsPerPage(event.target.value)}
+    //   // eslint-disable-next-line no-shadow
+    //     onChangePage={(_, page) => changePage(page)}
+    //   />
+    // ),
 
   });
 
@@ -223,7 +230,7 @@ const Cases = ({ classes, data }) => {
             {dashboardTable.tableTitle}
           </Grid>
           <Grid item xs={12} id="table_cases">
-            <CustomDataTable
+            <CaseView
               data={data}
               columns={columns}
               options={options()}

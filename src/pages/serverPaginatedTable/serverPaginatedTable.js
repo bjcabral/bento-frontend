@@ -173,11 +173,10 @@ class Example extends React.Component {
 
   render() {
     const {
-      data, page, count, isLoading, rowsPerPage, sortOrder,
+      data, page, count, isLoading, rowsPerPage, sortOrder, columns
     } = this.state;
 
-    const options = {
-      filter: true,
+    const options1 = {
       filterType: 'dropdown',
       responsive: 'stacked',
       serverSide: true,
@@ -185,7 +184,6 @@ class Example extends React.Component {
       rowsPerPage,
       rowsPerPageOptions: [],
       sortOrder,
-      customToolbar: () => <CustomToolbar fullData = {this.getSrcData() !== {} ? this.getSrcData() : [{}]} />,
       onTableChange: (action, tableState) => {
         // console.log(action, tableState);
 
@@ -218,8 +216,8 @@ class Example extends React.Component {
             </Typography>
 )}
           data={data}
-          columns={this.state.columns}
-          options={options}
+          columns={columns}
+          options={Object.assign({}, this.props.options, options1)}
         />
       </div>
     );

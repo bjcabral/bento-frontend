@@ -13,17 +13,18 @@ const defaultToolbarStyles = {
 
 class CustomToolbar extends React.Component {
   
-  handleClick = () => {
+  handleClick = (fullData) => {
     console.log("clicked on icon!");
+    console.log(fullData);
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, fullData } = this.props;
 
     return (
       <React.Fragment>
         <Tooltip title={"custom icon"}>
-          <IconButton className={classes.iconButton} onClick={this.handleClick}>
+          <IconButton className={classes.iconButton} onClick={()=>this.handleClick(fullData)}>
             <CheckBoxIcon className={classes.deleteIcon} />
           </IconButton>
         </Tooltip>
