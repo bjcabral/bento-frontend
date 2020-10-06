@@ -18,17 +18,6 @@ class Example extends React.Component {
       {
         name: 'subject_id',
         label: 'Case ID',
-        options: {
-          customBodyRender: (value, tableMeta, updateValue) => {
-            // Here you can render a more complex display.
-            // You're given access to tableMeta, which has
-            // the rowData (as well as the original object data).
-            // See the console for a detailed look at this object.
-
-            console.log('customBodyRender');
-            return value;
-          },
-        },
       },
       {
         name: 'program',
@@ -173,9 +162,10 @@ class Example extends React.Component {
 
   render() {
     const {
-      data, page, count, isLoading, rowsPerPage, sortOrder, columns
+      data, page, count, isLoading, rowsPerPage, sortOrder, columns, test
     } = this.state;
-
+    console.log(test);
+    console.log(test);
     const options1 = {
       filterType: 'dropdown',
       responsive: 'stacked',
@@ -184,6 +174,7 @@ class Example extends React.Component {
       rowsPerPage,
       rowsPerPageOptions: [],
       sortOrder,
+      // rowsSelected: data.map((item, idx) => idx),
       onTableChange: (action, tableState) => {
         // console.log(action, tableState);
 
@@ -198,13 +189,10 @@ class Example extends React.Component {
             this.sort(tableState.page, tableState.sortOrder);
             break;
           default:
-            console.log('action not handled.');
+            break;
         }
       },
     };
-
-    console.log('COLUMNS');
-    console.dir(JSON.parse(JSON.stringify(this.state.columns)));
 
     return (
       <div>

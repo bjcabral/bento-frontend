@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useRef, useEffect } from 'react';
 import {
   Grid,
@@ -33,9 +35,21 @@ const Cases = ({ classes, data }) => {
     open: false,
     value: 0,
   });
+
+  const [selectedListState, setSelectedListState] = React.useState([]);
   function openSnack(value1) {
     setsnackbarState({ open: true, value: value1 });
   }
+
+  function addToSelectedState(e) {
+    setSelectedListState([...selectedListState, e]);
+  };
+
+  // const removeToSelectedState = (e) => {
+  //   const name = e.target.value;
+  //   setSelectedListState(selectedListState.filter((f) => (f !== name)));
+  // };
+
   function closeSnack() {
     setsnackbarState({ open: false });
   }
@@ -119,8 +133,20 @@ const Cases = ({ classes, data }) => {
       ),
     },
   }));
+  
+  let selectedCaseIds = ['BENTO-CASE-1115298','BENTO-CASE-1023585','BENTO-CASE-1013342','BENTO-CASE-1028008','BENTO-CASE-1030608','BENTO-CASE-1066315'];
 
-  let selectedCaseIds = [];
+  const setOuRowsSelected = () => {
+    const result = data && data
+    .map((item, idx) => {
+      if (selectedCaseIds.filter(e2 => item.subject_id === e2).length > 0) {
+        console.log("find " + idx);
+        return idx;
+      }
+      return undefined;
+    });
+    return result.filter((f)=> f!= undefined);
+  };
 
   function exportCases() {
     // Find the newly added cases by comparing
@@ -165,20 +191,16 @@ const Cases = ({ classes, data }) => {
     pagination: true,
     onRowsSelect:
      (curr, allRowsSelected) => onRowsSelect(curr, allRowsSelected),
-    customToolbarSelect: (selectedRows, displayData) => {
+      customToolbarSelect: (selectedRows, displayData) => {
       const selectedKeys = Object.keys(selectedRows.data).map((keyVlaue) => (
         selectedRows.data[keyVlaue].index
       ));
-      const selectedCaseId1 = selectedKeys.map((keyVlaue) => (
-        displayData[keyVlaue].data[dashboardTable.tableData.findIndex(
-          (p) => p.primary === true,
-        )]));
-      console.log(selectedCaseId1);
       const selectedCaseId = selectedKeys.map((keyVlaue) => (
         displayData[keyVlaue].data[dashboardTable.tableData.findIndex(
           (p) => p.primary === true,
         )]
       ));
+      // addToSelectedState(selectedCaseId);
       selectedCaseIds = selectedCaseId;
       return '';
     },
@@ -234,6 +256,7 @@ const Cases = ({ classes, data }) => {
               data={data}
               columns={columns}
               options={options()}
+              test={setOuRowsSelected()}
             />
           </Grid>
 
