@@ -3,11 +3,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CustomToolbar from './CustomToolbar';
+import TableFooter from '@material-ui/core/TableFooter';
+import TableRow from '@material-ui/core/TableRow';
+import TablePagination from '@material-ui/core/TablePagination';
+
 import { CircularProgress, Typography } from '@material-ui/core';
 import { CustomDataTable } from 'bento-components';
 
 
-class Example extends React.Component {
+class ServerPaginatedTableView extends React.Component {
   state = {
     page: 0,
     count: 1,
@@ -174,6 +178,20 @@ class Example extends React.Component {
       rowsPerPage,
       rowsPerPageOptions: [],
       sortOrder,
+      customFooter: (count, page, rowsPerPage, changeRowsPerPage, changePage) => (
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              count={count}
+              page={page}
+              rowsPerPage={rowsPerPage}
+              onChangeRowsPerPage={(event) => { this.setState({ rowsPerPage: event.target.value });changePage(page);changeRowsPerPage(event.target.value)}}
+              // eslint-disable-next-line no-shadow
+              onChangePage={(_, page) => changePage(page)}
+            />
+          </TableRow>
+        </TableFooter>
+      ),
       // rowsSelected: data.map((item, idx) => idx),
       onTableChange: (action, tableState) => {
         // console.log(action, tableState);
@@ -212,4 +230,4 @@ class Example extends React.Component {
   }
 }
 
-export default Example;
+export default ServerPaginatedTableView;
