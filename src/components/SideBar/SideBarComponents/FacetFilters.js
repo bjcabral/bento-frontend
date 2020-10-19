@@ -69,9 +69,8 @@ const FacetPanel = ({ classes }) => {
     }]));
   };
 
-  const sideBarDisplay = sideBarContent.data.filter((sideBar) => sideBar.show === true)
-    .slice(0, 12);
-
+  const sideBarDisplay = sideBarContent.data.filter((sideBar) => sideBar.show === true);
+  console.log(sideBarDisplay);
   return (
     <>
       {sideBarDisplay.map((sideBarItem) => {

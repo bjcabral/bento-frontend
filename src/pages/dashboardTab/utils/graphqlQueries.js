@@ -62,6 +62,22 @@ export const DASHBOARD_QUERY = gql`{
     group
     subjects
   }
+  subjectCountByFileType {
+        group
+        subjects
+      }
+  subjectCountByFileAssociation {
+        group
+        subjects
+      }
+  subjectCountByTissueComposition {
+        group
+        subjects
+      }
+  subjectCountByTissueType {
+        group
+        subjects
+      }
     armsByPrograms {
         program
         caseSize

@@ -1,45 +1,64 @@
+/* eslint-disable */
 import gql from 'graphql-tag';
 
 // --------------- Dashboard Sidebar Filters configuration --------------
 // A maximum of 12 facetSearchData are allowed
-export const facetSearchData = [
-  {
-    label: 'Program', field: 'group', api: 'subjectCountByProgram', datafield: 'program', show: true,
-  },
-  {
-    label: 'Arm', field: 'group', api: 'subjectCountByStudy', datafield: 'study_info', show: true,
-  },
-  {
-    label: 'Diagnosis', field: 'group', api: 'subjectCountByDiagnoses', datafield: 'diagnosis', show: true,
-  },
-  {
-    label: 'Recurrence Score', field: 'group', api: 'subjectCountByRecurrenceScore', datafield: 'recurrence_score', show: true,
-  },
-  {
-    label: 'Tumor Size', field: 'group', api: 'subjectCountByTumorSize', datafield: 'tumor_size', show: true,
-  },
-  {
-    label: 'Chemotherapy Regimen', field: 'group', api: 'subjectCountByChemotherapyRegimen', datafield: 'chemotherapy', show: true,
-  },
-  {
-    label: 'Tumor Grade', field: 'group', api: 'subjectCountByTumorGrade', datafield: 'tumor_grade', show: true,
-  },
-  {
-    label: 'ER Status', field: 'group', api: 'subjectCountByErStatus', datafield: 'er_status', show: true,
-  },
-  {
-    label: 'PR Status', field: 'group', api: 'subjectCountByPrStatus', datafield: 'pr_status', show: true,
-  },
-  {
-    label: 'Chemotherapy', field: 'group', api: 'subjectCountByChemotherapyRegimen', datafield: 'chemotherapy', show: true,
-  },
-  {
-    label: 'Endocrine Therapy', field: 'group', api: 'subjectCountByEndocrineTherapy', datafield: 'endocrine_therapy', show: true,
-  },
-  {
-    label: 'Menopause Status', field: 'group', api: 'subjectCountByMenopauseStatus', datafield: 'menopause_status', show: true,
-  },
-];
+export const facetSearchData = {
+  'Filter By Case': [
+    {
+      label: 'Program', field: 'group', api: 'subjectCountByProgram', datafield: 'program', show: true,
+    },
+    {
+      label: 'Arm', field: 'group', api: 'subjectCountByStudy', datafield: 'study_info', show: true,
+    },
+    {
+      label: 'Diagnosis', field: 'group', api: 'subjectCountByDiagnoses', datafield: 'diagnosis', show: true,
+    },
+    {
+      label: 'Recurrence Score', field: 'group', api: 'subjectCountByRecurrenceScore', datafield: 'recurrence_score', show: true,
+    },
+    {
+      label: 'Tumor Size', field: 'group', api: 'subjectCountByTumorSize', datafield: 'tumor_size', show: true,
+    },
+    {
+      label: 'Chemotherapy Regimen', field: 'group', api: 'subjectCountByChemotherapyRegimen', datafield: 'chemotherapy', show: true,
+    },
+    {
+      label: 'Tumor Grade', field: 'group', api: 'subjectCountByTumorGrade', datafield: 'tumor_grade', show: true,
+    },
+    {
+      label: 'ER Status', field: 'group', api: 'subjectCountByErStatus', datafield: 'er_status', show: true,
+    },
+    {
+      label: 'PR Status', field: 'group', api: 'subjectCountByPrStatus', datafield: 'pr_status', show: true,
+    },
+    {
+      label: 'Chemotherapy', field: 'group', api: 'subjectCountByChemotherapyRegimen', datafield: 'chemotherapy', show: true,
+    },
+    {
+      label: 'Endocrine Therapy', field: 'group', api: 'subjectCountByEndocrineTherapy', datafield: 'endocrine_therapy', show: true,
+    },
+    {
+      label: 'Menopause Status', field: 'group', api: 'subjectCountByMenopauseStatus', datafield: 'menopause_status', show: true,
+    },
+  ],
+  'Filter By Sample': [
+    {
+      label: 'Tissue Composition', field: 'group', api: 'subjectCountByTissueComposition', datafield: 'tissue_composition', show: true,
+    },
+    {
+      label: 'Tissue Type', field: 'group', api: 'subjectCountByTissueType', datafield: 'tissue_type', show: true,
+    },
+  ],
+  'Filter By File': [
+    {
+      label: 'File Type', field: 'group', api: 'subjectCountByFileType', datafield: 'file_format', show: true,
+    },
+    {
+      label: 'File Association', field: 'group', api: 'subjectCountByFileAssociation', datafield: 'association', show: true,
+    },
+  ],
+};
 
 // --------------- Dashboard Widgets configuration --------------
 // A maximum of 6 widgets are allowed
@@ -226,10 +245,26 @@ export const GET_DASHBOARD_DATA_QUERY = gql`{
         group
         subjects
       }
-      subjectCountByEndocrineTherapy{
-    group
-    subjects
-  }
+  subjectCountByEndocrineTherapy{
+      group
+      subjects
+      }
+  subjectCountByFileType {
+        group
+        subjects
+      }
+  subjectCountByFileAssociation {
+        group
+        subjects
+      }
+  subjectCountByTissueComposition {
+        group
+        subjects
+      }
+  subjectCountByTissueType {
+        group
+        subjects
+      }
     armsByPrograms {
         program
         caseSize
@@ -290,4 +325,31 @@ export const GET_DASHBOARD_TABLE_DATA_QUERY = gql`{
         file_id
       }
   }
+  sampleOverview {
+        sample_id
+        subject_id
+        program
+        arm
+        diagnosis
+        tissue_type
+        tissue_composition
+        sample_anatomic_site
+        sample_procurement_method
+        platform
+        files 
+    }
+    
+    fileOverview {
+        file_id
+        file_name
+        association
+        file_description
+        file_format
+        file_size
+        program
+        arm
+        subject_id
+        sample_id
+        diagnosis
+    }
   }`;

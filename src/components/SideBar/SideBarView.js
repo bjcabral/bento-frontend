@@ -17,8 +17,8 @@ const SideBarContent = ({ classes }) => {
     state.dashboard.datatable
       && state.dashboard.datatable.filters
       ? state.dashboard.datatable.filters : []));
-  const countFilters = facetSearchData
-    ? facetSearchData.reduce((n, facet) => n + (facet.show === true), 0) : 0;
+  console.log(facetSearchData);
+  const countFilters = 14;
   return (
     <Drawer
       variant="persistent"

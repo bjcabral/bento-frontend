@@ -391,12 +391,15 @@ export function transformAPIDataIntoCheckBoxData(data, field) {
 // that function transforms the data which returns from API into a another format
 // so it contains more information and easy for front-end to show it correctly.
 export function customCheckBox(data) {
-  return (
-    facetSearchData.map((mapping) => ({
+  const facetSections = Object.keys(facetSearchData);
+  const facetFilters = facetSections.map((currentSection) => {
+    const individualfacetFilters = facetSearchData[currentSection].map((mapping) => ({
       groupName: mapping.label,
       checkboxItems: transformAPIDataIntoCheckBoxData(data[mapping.api], mapping.field),
       datafield: mapping.datafield,
       show: mapping.show,
-    }))
-  );
+    }));
+    return { [currentSection]: individualfacetFilters };
+  });
+  return facetFilters;
 }
