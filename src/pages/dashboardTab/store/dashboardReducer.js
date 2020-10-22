@@ -3,7 +3,7 @@ import { globalStatsData as statsCount } from '../../../bento/globalStatsData';
 import { widgetsData } from '../../../bento/dashboardData';
 import store from '../../../store';
 import client from '../../../utils/graphqlClient';
-import { DASHBOARD_QUERY } from '../utils/graphqlQueries';
+import { DASHBOARD_QUERY, DASHBOARD_TABLE_ALLDATA_QUERY } from '../utils/graphqlQueries';
 import {
   customCheckBox,
   transformInitialDataForSunburst,
@@ -50,6 +50,10 @@ function shouldFetchDataForDashboardTabDataTable(state) {
   return !(state.isFetched);
 }
 
+function shouldFetchAllDataForDashboardTabDataTable(state) {
+  return !(state.isDataTableUptoDate);
+}
+
 function getStatInit(input) {
   const initStats = statsCount.reduce((acc, widget) => (
     { ...acc, [widget.statAPI]: input[widget.statAPI] }
@@ -81,6 +85,17 @@ function fetchDashboardTab() {
   };
 }
 
+function fetchAllDashboardTabsData() {
+  return () => client
+    .query({
+      query: DASHBOARD_TABLE_ALLDATA_QUERY,
+    })
+    .then((result) => store.dispatch({ type: 'RECEIVE_FULL_DASHBOARDTAB', payload: _.cloneDeep(result) }))
+    .catch((error) => store.dispatch(
+      { type: 'DASHBOARDTAB_QUERY_ERR', error },
+    ));
+}
+
 export function toggleCheckBox(payload) {
   return store.dispatch({ type: 'TOGGGLE_CHECKBOX', payload });
 }
@@ -97,6 +112,11 @@ function getWidgetsData(input) {
 
 export function fetchDataForDashboardTabDataTable() {
   if (shouldFetchDataForDashboardTabDataTable(getState())) {
+    if (shouldFetchAllDataForDashboardTabDataTable(getState())) {
+      setTimeout(() => {
+        store.dispatch(fetchAllDashboardTabsData());
+      }, 2000);
+    }
     return store.dispatch(fetchDashboardTab());
   }
   return store.dispatch({ type: 'READY_DASHBOARDTAB' });
@@ -175,6 +195,23 @@ const reducers = {
 
       } : { ...state };
   },
+  RECEIVE_FULL_DASHBOARDTAB: (state, item) => (item.data
+    ? {
+      ...state.dashboard,
+      isFetched: true,
+      isDataTableUptoDate: true,
+      isLoading: false,
+      hasError: false,
+      subjectOverView: {
+        data: item.data.subjectOverViewPaged,
+      },
+      datatable: {
+        dataCase: item.data.subjectOverViewPaged,
+        dataSample: item.data.sampleOverview,
+        dataFile: item.data.fileOverview,
+        filters: [],
+      },
+    } : { ...state }),
 };
 
 // INJECT-REDUCERS INTO REDUX STORE

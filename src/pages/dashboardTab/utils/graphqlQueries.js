@@ -72,7 +72,7 @@ export const DASHBOARD_QUERY = gql`{
         }
     }
 
-  subjectOverViewPaged(first: 1000000) {
+  subjectOverViewPaged(first: 100) {
       subject_id
       program_id
       study_info
@@ -123,3 +123,56 @@ export const DASHBOARD_QUERY = gql`{
         diagnosis
     }
   }`;
+
+export const DASHBOARD_TABLE_ALLDATA_QUERY = gql`{
+    subjectOverViewPaged(first: 1000000) {
+        subject_id
+        program_id
+        study_info
+        samples
+        program
+        study_acronym
+        diagnosis
+        recurrence_score
+        tumor_size
+        tumor_grade
+        er_status
+        pr_status
+        chemotherapy
+        endocrine_therapy
+        menopause_status
+        age_at_index
+        survival_time
+        lab_procedures
+        files{
+          file_id
+        }
+    }
+      sampleOverview {
+          sample_id
+          subject_id
+          program
+          arm
+          diagnosis
+          tissue_type
+          tissue_composition
+          sample_anatomic_site
+          sample_procurement_method
+          platform
+          files 
+      }
+      
+      fileOverview {
+          file_id
+          file_name
+          association
+          file_description
+          file_format
+          file_size
+          program
+          arm
+          subject_id
+          sample_id
+          diagnosis
+      }
+    }`;
