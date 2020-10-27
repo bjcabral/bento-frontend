@@ -1,83 +1,184 @@
-/* eslint-disable */
 import React from 'react';
-import { globalStatsData as statsCount, statsBarStyle } from '../../bento/globalStatsData';
-
 import {
+  Grid,
+  Paper,
   withStyles,
 } from '@material-ui/core';
+import { globalStatsData as statsCount, statsBarStyle } from '../../bento/globalStatsData';
+import { Typography } from '../Wrappers/Wrappers';
 
 const StatsView = ({ classes, data }) => (
   <>
-    <div className={classes.statsSection}>
-      <div
-        className={classes.box}
-      >
-        {statsCount.slice(0, 6).map((stat) => (
-          <div>
-            {
-          statsBarStyle == 'vertical' ? <div className={classes.verticalStatsGroup}>
-            {console.log('vertical')}
-            <div className={classes.verticalStatsIcon}>
-              <img
-                  src={stat.statIconSrc}
-                  alt={stat.statIconAlt}
-                />
-            </div>
-            <div className={classes.verticalStatsText}>
-              <div className={classes.verticalStatTitle}>
-                {stat.statTitle}
+    <div>
+      { statsBarStyle === 'ctdc'
+        ? (
+          <Grid container className={classes.ctdcStatsContainer}>
+            <Grid item xs={12}>
+              <Paper className={classes.ctdcPaper}>
+                <div id="stats_bar" container className={classes.ctdcStatsMaxWidth}>
+                  {statsCount.slice(0, 6).map((stat) => (
+                    <div className={classes.ctdcStatsGroup}>
+                      <div className={classes.ctdcStatsIcon}>
+                        <img
+                          src={stat.statIconSrc}
+                          alt={stat.statIconAlt}
+                        />
+                      </div>
+                      <div className={classes.ctdcStatsText}>
+                        <div className={classes.ctdcFloatLeft}>
+                          <Typography weight="bold" size="sm" color="textWithBackground">
+                            {stat.statTitle}
+                            {' '}
+                            {' '}
+                          </Typography>
+                        </div>
+                        <div id="trials_count" className={classes.ctdcFloatRight}>
+                          <Typography color="primary" weight="bold" size="sm">
+                            {data[stat.statAPI]}
+                          </Typography>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Paper>
+            </Grid>
+          </Grid>
+        )
+        : statsBarStyle === 'icdc'
+          ? (
+            <Grid container class={classes.statsContainer}>
+              <Grid item xs={12}>
+                <Paper className={classes.icdcPaper}>
+                  <Grid container class={classes.statsMaxWidth}>
+                    <Grid item xs={1} />
+                    {statsCount.slice(0, 6).map((stat) => (
+                      <Grid item xs={12} sm={4} md={2} lg={2}>
+                        <div className={classes.icdcStatsGroup}>
+                          <div className={classes.icdcStatsIcon}>
+                            <img
+                              src={stat.statIconSrc}
+                              alt={stat.statIconAlt}
+                            />
+
+                          </div>
+                          <div className={classes.icdcStatsText}>
+                            <Typography weight="bold" size="md">
+                              {' '}
+                              {data[stat.statAPI]}
+                            </Typography>
+                            <div className={classes.icdcMarginTop1}>
+                              <Typography color="primary" weight="bold">
+                                {stat.statTitle}
+                              </Typography>
+                            </div>
+                          </div>
+                        </div>
+                      </Grid>
+                    ))}
+                    <Grid item xs={1} />
+                  </Grid>
+                </Paper>
+              </Grid>
+            </Grid>
+          )
+          : statsBarStyle === 'bento'
+            ? (
+              <div className={classes.statsSection}>
+                <div
+                  className={classes.box}
+                >
+                  {statsCount.slice(0, 6).map((stat) => (
+                    <div className={classes.statsGroup}>
+                      <div className={classes.statsText}>
+                        <div className={classes.statTitle}>
+                          {stat.statTitle}
+                        </div>
+                        <div className={classes.statCount}>
+                          {data[stat.statAPI]}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className={classes.verticalStatCount}>
-                {data[stat.statAPI]}
-              </div>
-            </div>
-          </div>
-          : <div className={classes.statsGroup}>
-            {console.log('horizontal')}
-            <div className={classes.statsIcon}>
-              <img
-                  src={stat.statIconSrc}
-                  alt={stat.statIconAlt}
-                />
-            </div>
-          <div className={classes.statsText}>
-            <div className={classes.statTitle}>
-              {stat.statTitle}
-            </div>
-            <div className={classes.statCount}>
-              {data[stat.statAPI]}
-            </div>
-          </div>
-        </div>
-        }
-          </div>
-        ))}
-      </div>
+            )
+            : <></>}
     </div>
   </>
 );
 
-const styles = () => ({
-  verticalStatsGroup: {
-    padding: '9px 16px 12px 16px',
+const styles = (theme) => ({
+  ctdcStatsContainer: {
+    position: 'fixed',
+    width: '100%',
+    zIndex: '999',
+    top: '139px',
+  },
+  ctdcPaper: {
+    background: theme.palette.deepSkyBlue.main,
+    boxShadow: 'none',
+    borderRadius: '0',
+  },
+  ctdcStatsGroup: {
+    padding: '13px 48px 12px 48px',
     height: '46px',
-    maxWidth: '1440px',
+    maxWidth: theme.custom.maxContentWidth,
     margin: 'auto',
   },
-  verticalStatsIcon: {
+  ctdcStatsText: {
+    maxWidth: theme.custom.maxContentWidth,
+    margin: 'auto',
+    float: 'left',
+    marginLeft: '32px',
+    marginBottom: '8px',
+  },
+  ctdcStatsIcon: {
     position: 'absolute',
     float: 'left',
     width: '28px',
     height: '28px',
+    marginTop: '-4px',
   },
-  verticalStatsText: {
-    maxWidth: '1440px',
+  ctdcFloatLeft: {
+    float: 'left',
+    marginTop: '3px',
+    letterSpacing: '1px',
+  },
+  ctdcFloatRight: {
+    float: 'right',
+    marginLeft: '6px',
+    marginTop: '3px',
+  },
+  ctdcStatsMaxWidth: {
+    display: 'flex',
+    maxWidth: '700px',
+    margin: '0 auto',
+  },
+  icdcPaper: {
+    background: theme.palette.curiousBlue.main,
+    boxShadow: 'none',
+  },
+  icdcStatsGroup: {
+    padding: '9px 16px 12px 16px',
+    height: '46px',
+    maxWidth: theme.custom.maxContentWidth,
+    margin: 'auto',
+  },
+  icdcStatsText: {
+    maxWidth: theme.custom.maxContentWidth,
     margin: 'auto',
     float: 'left',
     marginLeft: '52px',
     marginBottom: '8px',
   },
-  verticalStatCount: {
+  icdcStatsIcon: {
+    position: 'absolute',
+    float: 'left',
+    width: '45px',
+    height: '45px',
+  },
+  icdcMarginTop1: {
     marginTop: '1px',
   },
   statsSection: {
@@ -91,25 +192,6 @@ const styles = () => ({
     right: 0,
     display: 'flex',
     justifyContent: 'flex-end',
-  },
-  bannerTexture: {
-    color: '#4898B4',
-    fontFamily: 'Raleway',
-    fontSize: '19px',
-    fontWeight: '600',
-    lineHeight: '60px',
-    textAlign: 'center',
-    margin: '0 auto',
-    letterSpacing: '0.050pt',
-    textTransform: 'uppercase',
-    width: '869px',
-  },
-  boxCut: {
-    direction: 'ltr',
-    display: 'inline-flex',
-    borderBottom: '47px solid #8DCAFF',
-    borderLeft: '50px solid transparent',
-    height: '47px',
   },
   box: {
     direction: 'ltr',
@@ -133,17 +215,6 @@ const styles = () => ({
     marginTop: '14px',
     textTransform: 'uppercase',
   },
-  verticalStatTitle: {
-    display: 'inline-block',
-    float: 'left',
-    color: '#062D4F',
-    fontFamily: 'Nunito',
-    fontWeight: 'bold',
-    fontSize: '11px',
-    letterSpacing: '1px',
-    marginRight: '8px',
-    textTransform: 'uppercase',
-  },
   statCount: {
     display: 'inline-block',
     color: '#0467BD',
@@ -152,28 +223,8 @@ const styles = () => ({
     marginTop: '4px',
     fontWeight: 600,
   },
-  floatLeft: {
-    float: 'left',
-    marginTop: '3px',
-    letterSpacing: '1px',
-  },
-  floatRight: {
-    float: 'right',
-    marginLeft: '6px',
-    marginTop: '3px',
-  },
   statsGroup: {
-    // padding: '36px 48px 4px 48px',
-    // borderBottom: '2px solid',
     margin: '4px 32px',
-  },
-  statsIcon: {
-    position: 'absolute',
-    float: 'left',
-    width: '28px',
-    height: '28px',
-    marginTop: '8px',
-    marginLeft: '-35px',
   },
 });
 

@@ -1,7 +1,82 @@
 import gql from 'graphql-tag';
 
-export const statsBarStyle = 'vertical';
+export const statsBarStyle = 'bento';
 
+// // ctdc
+// export const globalStatsData = [
+//   // A maximum of 6 stats are allowed
+//   {
+//     statTitle: 'TRIALS:',
+//     datatable_field: 'program',
+//     type: 'field',
+//     statAPI: 'numberOfPrograms',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/stats/stats-bar-trials.svg',
+//     statIconAlt: 'Studies Stats Bar Icon',
+//   },
+//   {
+//     statTitle: 'CASES:',
+//     datatable_field: 'study_acronym',
+//     type: 'field',
+//     statAPI: 'numberOfStudies',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/stats/stats-bar-cases.svg',
+//     statIconAlt: 'Cases Stats Bar Icon',
+//   },
+//   {
+//     statTitle: 'FILES:',
+//     datatable_field: 'subject_id',
+//     type: 'field',
+//     statAPI: 'numberOfSubjects',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/stats/stats-bar-files.svg',
+//     statIconAlt: 'Files Stats Bar Icon',
+//   },
+// ];
+
+// // icdc
+// export const globalStatsData = [
+//   // A maximum of 6 stats are allowed
+//   {
+//     statTitle: 'Studies',
+//     datatable_field: 'program',
+//     type: 'field',
+//     statAPI: 'numberOfPrograms',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/Icon-studies-stats.svg',
+//     statIconAlt: 'Studies Stats Bar Icon',
+//   },
+//   {
+//     statTitle: 'Cases',
+//     datatable_field: 'study_acronym',
+//     type: 'field',
+//     statAPI: 'numberOfStudies',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/Icon-cases-stats.svg',
+//     statIconAlt: 'Cases Stats Bar Icon',
+//   },
+//   {
+//     statTitle: 'Samples',
+//     datatable_field: 'subject_id',
+//     type: 'field',
+//     statAPI: 'numberOfSubjects',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/Icon-samples-stats.svg',
+//     statIconAlt: 'Samples Stats Bar Icon',
+//   },
+//   {
+//     statTitle: 'Files',
+//     datatable_field: 'subject_id',
+//     type: 'field',
+//     statAPI: 'numberOfSubjects',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/Icon-files-stats.svg',
+//     statIconAlt: 'Files Stats Bar Icon',
+//   },
+//   {
+//     statTitle: 'Aliquots',
+//     datatable_field: 'subject_id',
+//     type: 'field',
+//     statAPI: 'numberOfSubjects',
+//     statIconSrc: 'https://raw.githubusercontent.com/CBIIT/ctdc-codebase/master/src/main/frontend/src/assets/icons/Icon-aliquots-stats.svg',
+//     statIconAlt: 'Aliquots Stats Bar Icon',
+//   },
+// ];
+
+// bento
 export const globalStatsData = [
   // A maximum of 6 stats are allowed
   {
@@ -9,40 +84,30 @@ export const globalStatsData = [
     datatable_field: 'program',
     type: 'field',
     statAPI: 'numberOfPrograms',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'Arms',
     datatable_field: 'study_acronym',
     type: 'field',
     statAPI: 'numberOfStudies',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'Cases',
     datatable_field: 'subject_id',
     type: 'field',
     statAPI: 'numberOfSubjects',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'samples',
     type: 'array',
     datatable_field: 'samples',
     statAPI: 'numberOfSamples',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'Assays',
     type: 'array',
     datatable_field: 'lab_procedures',
     statAPI: 'numberOfLabProcedures',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'files',
@@ -50,8 +115,6 @@ export const globalStatsData = [
     datatable_field: 'files',
     datatable_sub_field: 'file_id',
     statAPI: 'numberOfFiles',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
 ];
 
