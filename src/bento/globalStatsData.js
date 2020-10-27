@@ -1,6 +1,43 @@
 import gql from 'graphql-tag';
 
-export const statsBarStyle = 'vertical';
+export const statsStyling = {
+  global: {
+    style: 'horizontal',
+    height: '47px',
+    background: '#8DCAFF',
+  },
+  statGroup: {
+    statsGroupmargin: '4px 32px',
+  },
+  statTitle: {
+    display: 'inline-block',
+    float: 'left',
+    color: '#062D4F',
+    fontFamily: 'Nunito',
+    fontWeight: 'bold',
+    fontSize: '11px',
+    letterSpacing: '1px',
+    marginRight: '8px',
+    marginTop: '14px',
+    textTransform: 'uppercase',
+  },
+  statCount: {
+    display: 'inline-block',
+    color: '#0467BD',
+    fontFamily: 'Oswald',
+    fontSize: '20px',
+    marginTop: '6px',
+    fontWeight: 600,
+  },
+  statsIcon: {
+    position: 'absolute',
+    float: 'left',
+    width: '28px',
+    height: '28px',
+    marginTop: '8px',
+    marginLeft: '-35px',
+  },
+};
 
 export const globalStatsData = [
   // A maximum of 6 stats are allowed
@@ -9,40 +46,30 @@ export const globalStatsData = [
     datatable_field: 'program',
     type: 'field',
     statAPI: 'numberOfPrograms',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'Arms',
     datatable_field: 'study_acronym',
     type: 'field',
     statAPI: 'numberOfStudies',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'Cases',
     datatable_field: 'subject_id',
     type: 'field',
     statAPI: 'numberOfSubjects',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'samples',
     type: 'array',
     datatable_field: 'samples',
     statAPI: 'numberOfSamples',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'Assays',
     type: 'array',
     datatable_field: 'lab_procedures',
     statAPI: 'numberOfLabProcedures',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
   {
     statTitle: 'files',
@@ -50,8 +77,6 @@ export const globalStatsData = [
     datatable_field: 'files',
     datatable_sub_field: 'file_id',
     statAPI: 'numberOfFiles',
-    statIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
-    statIconAlt: 'Number of files icon',
   },
 ];
 
