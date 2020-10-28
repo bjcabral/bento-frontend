@@ -33,7 +33,6 @@ export const statsStyling = {
     float: 'left',
     width: '28px',
     height: '28px',
-    marginTop: '8px',
     margin: '8px 0px 0px -35px',
   },
 };
