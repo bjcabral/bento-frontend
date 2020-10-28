@@ -2,31 +2,30 @@ import gql from 'graphql-tag';
 
 export const statsStyling = {
   global: {
-    style: 'horizontal',
+    horizontalStyle: true,
+    statTitleFirst: true,
     height: '47px',
     background: '#8DCAFF',
   },
   statGroup: {
-    statsGroupmargin: '4px 32px',
+    // spacing between stats
+    margin: '4px 32px',
   },
   statTitle: {
-    display: 'inline-block',
     float: 'left',
     color: '#062D4F',
     fontFamily: 'Nunito',
     fontWeight: 'bold',
     fontSize: '11px',
     letterSpacing: '1px',
-    marginRight: '8px',
-    marginTop: '14px',
+    margin: '14px 8px 0px 0px',
     textTransform: 'uppercase',
   },
   statCount: {
-    display: 'inline-block',
     color: '#0467BD',
     fontFamily: 'Oswald',
     fontSize: '20px',
-    marginTop: '6px',
+    margin: '6px 0px 0px 0px',
     fontWeight: 600,
   },
   statsIcon: {
@@ -35,7 +34,7 @@ export const statsStyling = {
     width: '28px',
     height: '28px',
     marginTop: '8px',
-    marginLeft: '-35px',
+    margin: '8px 0px 0px -35px',
   },
 };
 

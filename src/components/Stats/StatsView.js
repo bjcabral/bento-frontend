@@ -11,49 +11,35 @@ const StatsView = ({ classes, data }) => (
         className={classes.box}
       >
         {statsCount.slice(0, 6).map((stat) => (
-          <div>
+          <div className={classes.statsGroup}>
+            <div className={classes.statsIcon}>
+              <img
+                src={stat.statIconSrc}
+                alt={stat.statIconAlt}
+              />
+            </div>
             {
-          statsStyling.global.style === 'vertical' ? (
-            <div className={classes.verticalStatsGroup}>
-              {console.log('vertical')}
-              {console.log(statsStyling)}
-              <div className={classes.verticalStatsIcon}>
-                <img
-                  src={stat.statIconSrc}
-                  alt={stat.statIconAlt}
-                />
+          statsStyling.global.statTitleFirst === true ? (
+            <div>
+              <div className={classes.statTitle}>
+                {stat.statTitle}
               </div>
-              <div className={classes.verticalStatsText}>
-                <div className={classes.statTitle}>
-                  {stat.statTitle}
-                </div>
-                <div className={classes.verticalStatCount}>
-                  {data[stat.statAPI]}
-                </div>
+              <div className={classes.statCount}>
+                {data[stat.statAPI]}
               </div>
             </div>
           )
             : (
-              <div className={classes.statsGroup}>
-                {console.log('horizontal')}
-                {console.log(statsStyling.statTitle.float)}
-                <div className={classes.statsIcon}>
-                  <img
-                    src={stat.statIconSrc}
-                    alt={stat.statIconAlt}
-                  />
+              <div>
+                <div className={classes.statCount}>
+                  {data[stat.statAPI]}
                 </div>
-                <div className={classes.statsText}>
-                  <div className={classes.statTitle}>
-                    {stat.statTitle}
-                  </div>
-                  <div className={classes.statCount}>
-                    {data[stat.statAPI]}
-                  </div>
+                <div className={classes.statTitle}>
+                  {stat.statTitle}
                 </div>
               </div>
             )
-        }
+            }
           </div>
         ))}
       </div>
@@ -62,7 +48,7 @@ const StatsView = ({ classes, data }) => (
 );
 
 const styles = () => ({
-  statsSection: {
+  statsSection: statsStyling.global.background ? {
     top: '139px',
     width: '100%',
     zIndex: 999,
@@ -73,81 +59,62 @@ const styles = () => ({
     right: 0,
     display: 'flex',
     justifyContent: 'flex-end',
+  } : {
+    top: '139px',
+    width: '100%',
+    zIndex: 999,
+    position: 'fixed',
+    background: '#8DCAFF',
+    textAlign: 'center',
+    left: 0,
+    right: 0,
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
-  box: {
-    direction: 'ltr',
+  box: statsStyling.global.height ? {
     display: 'inline-flex',
     height: statsStyling.global.height,
     margin: '0 auto',
+  } : {
+    display: 'inline-flex',
+    height: '47px',
+    margin: '0 auto',
   },
-  statsText: {
-    height: '42px',
-  },
-  verticalStatsText: {
-    maxWidth: '1440px',
-    margin: 'auto',
-    float: 'left',
-    marginLeft: '52px',
-    marginBottom: '8px',
-  },
-  statTitle: {
-    display: statsStyling.statTitle.display,
-    float: statsStyling.statTitle.float,
-    color: statsStyling.statTitle.color,
-    fontFamily: statsStyling.statTitle.fontFamily,
-    fontWeight: statsStyling.statTitle.fontWeight,
-    fontSize: statsStyling.statTitle.fontSize,
-    letterSpacing: statsStyling.statTitle.letterSpacing,
-    marginRight: statsStyling.statTitle.marginRight,
-    marginTop: statsStyling.statTitle.marginTop,
-    textTransform: statsStyling.statTitle.textTransform,
-  },
-  verticalStatTitle: {
-    display: 'inline-block',
+  statTitle: statsStyling.statTitle ? statsStyling.statTitle : {
     float: 'left',
     color: '#062D4F',
     fontFamily: 'Nunito',
     fontWeight: 'bold',
     fontSize: '11px',
     letterSpacing: '1px',
-    marginRight: '8px',
+    margin: '14px 8px 0px 0px',
     textTransform: 'uppercase',
   },
-  statCount: {
-    display: statsStyling.statCount.display,
-    color: statsStyling.statCount.color,
-    fontFamily: statsStyling.statCount.fontFamily,
-    fontSize: statsStyling.statCount.fontSize,
-    marginTop: statsStyling.statCount.marginTop,
-    fontWeight: statsStyling.statCount.fontWeight,
+  statCount: statsStyling.global.horizontalStyle === true ? {
+    display: 'inline-block',
+    float: 'left',
+    color: '#0467BD',
+    fontFamily: 'Oswald',
+    fontSize: '20px',
+    margin: '6px 0px 0px 0px',
+    fontWeight: 600,
+  } : {
+    color: '#0467BD',
+    fontFamily: 'Oswald',
+    fontSize: '20px',
+    margin: '6px 0px 0px 0px',
+    fontWeight: 600,
   },
-  verticalStatCount: {
-    marginTop: '1px',
+  statsGroup: statsStyling.statGroup ? statsStyling.statGroup : {
+    margin: '4px 32px',
   },
-  statsGroup: {
-    // padding: '36px 48px 4px 48px',
-    // borderBottom: '2px solid',
-    margin: statsStyling.statGroup.statsGroupmargin,
-  },
-  verticalStatsGroup: {
-    padding: '9px 16px 12px 16px',
-    height: '46px',
-    maxWidth: '1440px',
-    margin: 'auto',
-  },
-  statsIcon: {
-    position: statsStyling.statsIcon.position,
-    float: statsStyling.statsIcon.float,
-    width: statsStyling.statsIcon.width,
-    height: statsStyling.statsIcon.height,
-    marginTop: statsStyling.statsIcon.marginTop,
-    marginLeft: statsStyling.statsIcon.marginLeft,
-  },
-  verticalStatsIcon: {
+  statsIcon: statsStyling.statsIcon ? statsStyling.statsIcon : {
     position: 'absolute',
     float: 'left',
     width: '28px',
     height: '28px',
+    marginTop: '8px',
+    margin: '8px 0px 0px -35px',
   },
 });
 
