@@ -10,7 +10,7 @@ import {
   withStyles,
 } from '@material-ui/core';
 import classnames from 'classnames';
-import { navBarData, navBarCartData } from '../../bento/navigationBarData';
+import { navBarData, navBarCartData, navBarstyling } from '../../bento/navigationBarData';
 import { initCart } from '../../pages/fileCentricCart/store/cart';
 import DropdownMenu from './components/DropdownMenu';
 import env from '../../utils/env';
@@ -85,7 +85,6 @@ const NavBar = ({
         className={classnames(classes.appBar, {
           [classes.appBarShift]: isSidebarOpened,
         })}
-        color="primary"
       >
         <Toolbar className={classes.toolbar}>
 
@@ -106,8 +105,8 @@ const NavBar = ({
                 : (
                   <Button id="button_navbar_navButton" disableRipple weight="medium" className={classes.logotype} classes={{ root: classes.buttonRoot }}>
                     <NavLink
-                      className={classes.firstLink}
-                      activeStyle={{ borderBottom: '1px solid  #FFFFFF' }}
+                      className={classes.labelText}
+                      activeClassName={classes.activeLabel}
                       to={navButton.link ? navButton.link : '/'}
                       onClick={() => handleButtonClickEvent(`${navButton.labelText}`)}
                     >
@@ -121,7 +120,7 @@ const NavBar = ({
           <div className={classes.myCasesPosition}>
             <Button id="button_navbar_mycases" disableRipple weight="medium" className={classes.logotype} classes={{ root: classes.buttonRootNoRightPadding }}>
               <NavLink
-                className={classnames(classes.link, classes.myCasesLink)}
+                className={classes.labelText}
                 to={navBarCartData.cartLink}
               >
                 {navBarCartData.cartLabel}
@@ -230,6 +229,7 @@ const styles = (theme) => ({
     margin: '0 auto',
   },
   appBar: {
+    backgroundColor: navBarstyling.global.backgroundColor,
     marginTop: '100px',
     width: '100vw',
     zIndex: theme.zIndex.drawer + 1,
@@ -243,20 +243,14 @@ const styles = (theme) => ({
     height: '22px',
     marginLeft: '6px',
   },
-  firstLink: {
-    textDecoration: 'none',
-    color: theme.palette.primary.contrastText,
-    fontFamily: 'Nunito',
-    fontSize: '13px',
+  labelText: {
+    textDecoration: navBarstyling.labelText.textDecoration,
+    color: navBarstyling.labelText.color,
+    fontFamily: navBarstyling.labelText.fontFamily,
+    fontSize: navBarstyling.labelText.fontSize,
   },
-  link: {
-    textDecoration: 'none',
-    color: theme.palette.primary.contrastText,
-    fontFamily: 'Nunito',
-    fontSize: '13px',
-  },
-  myCasesLink: {
-    color: '#FFFFFF',
+  activeLabel: {
+    borderBottom: navBarstyling.labelText.activeLabel,
   },
   appBarShift: {
     paddingRight: '0px !important',
@@ -272,20 +266,16 @@ const styles = (theme) => ({
     flexShrink: 0,
   },
   toolbar: {
-    minHeight: 39,
+    minHeight: navBarstyling.global.height,
     paddingRight: '45px',
     paddingLeft: '45px',
     alignItems: 'flex-start',
   },
   buttonRoot: {
-    paddingTop: '9px',
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    padding: navBarstyling.global.padding,
   },
   buttonRootNoRightPadding: {
-    paddingTop: '9px',
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    padding: navBarstyling.global.padding,
   },
   badge: {
     display: 'inline-flex',

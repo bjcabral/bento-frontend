@@ -2,8 +2,9 @@ import React from 'react';
 import {
   Button, withStyles,
 } from '@material-ui/core';
-// import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
+import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
 import DropdownItemsMenu from './DropdownItemsMenu';
+import { navBarstyling } from '../../../bento/navigationBarData';
 
 const DropdownMenu = ({
   classes, handleButtonClickEvent, linkText, clickedEl, dropDownElements,
@@ -41,7 +42,7 @@ const DropdownMenu = ({
         <span className={clickedEl === 'aboutMenu' ? classes.buttonRootClicked : ''}>
           { linkText }
         </span>
-        {/* <ExpandMoreRoundedIcon className={classes.icon} /> */}
+        {navBarstyling.dropDownIcon.displayIcon === true ? <ExpandMoreRoundedIcon className={classes.dropDownicon} /> : ''}
       </Button>
       {displayDropDownMenu ? <DropdownItemsMenu handleClick={dropdownMenuClickEvent} dropDownElements={dropDownElements} /> : ''}
     </div>
@@ -64,36 +65,14 @@ const styles = (theme) => ({
     },
   },
   buttonRoot: {
-    paddingTop: '9px',
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    padding: navBarstyling.global.padding,
   },
   buttonRootClicked: {
     borderBottom: '2px solid #FFFFFF',
   },
-  icon: {
-    fontSize: '18px',
-  },
-  paper: {
-    background: '#309EC4',
-    padding: '6px 16px 16px 16px',
-  },
-  link: {
-    textDecoration: 'none',
-    color: 'black',
-    fontFamily: 'Lato',
-    fontSize: '13px',
-    fontWeight: '800',
-    lineSpacing: '1px',
-    display: 'block',
-    marginTop: '13px',
-    '&:hover': {
-      cursor: 'pointer',
-      color: 'white',
-    },
-  },
-  aboutItemsWrapper: {
-    maxWidth: '150px',
+  dropDownicon: {
+    fontSize: navBarstyling.dropDownIcon.fontSize,
+    margin: navBarstyling.dropDownIcon.margin,
   },
   aboutMenu: {
     display: 'inline-block',
