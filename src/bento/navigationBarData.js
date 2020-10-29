@@ -1,5 +1,10 @@
-// A maximum of 4 nav bar items are allowed
-export default [
+export const styles = {
+  background: '#FFFF',
+};
+
+export const navBarData = [
+// A maximum of 5 nav bar items are allowed
+// A maximum of 9 dropDownLinks items are allowed
   {
     labelText: 'home',
     type: 'link',

@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import classnames from 'classnames';
 import { navBarCartData } from '../../bento/fileCentricCartWorkflowData';
-import navBarData from '../../bento/navigationBarData';
+import { navBarData } from '../../bento/navigationBarData';
 import { initCart } from '../../pages/fileCentricCart/store/cart';
 import DropdownMenu from './components/DropdownMenu';
 import env from '../../utils/env';
@@ -94,14 +94,14 @@ const NavBar = ({
 
           {/* End Sidebar button */}
           <div id="navbar" className={classes.buttonContainer}>
-            {navBarData.slice(0, 4).map((navButton) => (
+            {navBarData.slice(0, 5).map((navButton) => (
               navButton.type === 'dropdown'
                 ? (
                   <DropdownMenu
                     handleButtonClickEvent={handleButtonClickEvent}
                     clickedEl={clickedEl}
                     linkText={navButton.labelText}
-                    dropDownElements={navButton.dropDownLinks.slice(0, 6)}
+                    dropDownElements={navButton.dropDownLinks.slice(0, 9)}
                   />
                 )
                 : (
@@ -244,96 +244,11 @@ const styles = (theme) => ({
     height: '22px',
     marginLeft: '6px',
   },
-  hide: {
-    display: 'none',
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  messageContent: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  headerMenu: {
-    marginTop: theme.spacing.unit * 7,
-  },
-  headerMenuList: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  headerMenuItem: {
-    '&:hover, &:focus': {
-      backgroundColor: theme.palette.primary.main,
-      color: 'white',
-    },
-  },
-  headerMenuButton: {
-    marginLeft: theme.spacing.unit,
-    padding: theme.spacing.unit / 2,
-  },
-  headerMenuButtonCollapse: {
-    marginRight: theme.spacing.unit * 2,
-  },
-  headerIcon: {
-    fontSize: 20,
-  },
-  headerIconCollapse: {
-    color: 'white',
-  },
-  profileMenu: {
-    minWidth: 265,
-  },
-  profileMenuUser: {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: theme.spacing.unit * 2,
-  },
-  profileMenuItem: {
-    color: theme.palette.text.hint,
-  },
-  profileMenuIcon: {
-    marginRight: theme.spacing.unit * 2,
-    color: theme.palette.text.hint,
-  },
-  profileMenuLink: {
-    fontSize: 16,
-    textDecoration: 'none',
-    '&:hover': {
-      cursor: 'pointer',
-    },
-  },
-  messageNotification: {
-    height: 'auto',
-    display: 'flex',
-    alignItems: 'center',
-    '&:hover, &:focus': {
-      backgroundColor: theme.palette.background.light,
-    },
-  },
-  messageNotificationSide: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginRight: theme.spacing.unit * 2,
-  },
-  messageNotificationBodySide: {
-    alignItems: 'flex-start',
-    marginRight: 0,
-  },
-  sendMessageButton: {
-    margin: theme.spacing.unit * 4,
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    textTransform: 'none',
-  },
   firstLink: {
     textDecoration: 'none',
     color: theme.palette.primary.contrastText,
     fontFamily: 'Nunito',
     fontSize: '13px',
-  },
-  sendButtonIcon: {
-    marginLeft: theme.spacing.unit * 2,
   },
   link: {
     textDecoration: 'none',
@@ -343,9 +258,6 @@ const styles = (theme) => ({
   },
   myCasesLink: {
     color: '#FFFFFF',
-  },
-  menuButton: {
-    marginRight: theme.spacing.unit * 2,
   },
   appBarShift: {
     paddingRight: '0px !important',
@@ -359,12 +271,6 @@ const styles = (theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    marginTop: '100px',
-    zIndex: '1201',
-    height: 'calc(100% - 100px)',
   },
   toolbar: {
     minHeight: 39,
@@ -381,6 +287,18 @@ const styles = (theme) => ({
     paddingTop: '9px',
     paddingLeft: '20px',
     paddingRight: '20px',
+  },
+  badge: {
+    display: 'inline-flex',
+    position: 'relative',
+    verticalAlign: 'middle',
+  },
+  badgeText: {
+    height: '16px',
+    minWidth: '16px',
+    fontWeight: '600',
+    letterSpacing: '0.8px',
+    transform: 'scale(1) translate(0%, -50%)',
   },
   iconButtonRoot: {
     paddingTop: '9px',
@@ -418,17 +336,15 @@ const styles = (theme) => ({
   drawerAppBar: {
     height: '45px',
   },
-  badge: {
-    display: 'inline-flex',
-    position: 'relative',
-    verticalAlign: 'middle',
+  drawerPaper: {
+    width: drawerWidth,
+    marginTop: '100px',
+    zIndex: '1201',
+    height: 'calc(100% - 100px)',
   },
-  badgeText: {
-    height: '16px',
-    minWidth: '16px',
-    fontWeight: '600',
-    letterSpacing: '0.8px',
-    transform: 'scale(1) translate(0%, -50%)',
+  headerMenuButton: {
+    marginLeft: theme.spacing.unit,
+    padding: theme.spacing.unit / 2,
   },
 });
 
