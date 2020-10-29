@@ -10,8 +10,7 @@ import {
   withStyles,
 } from '@material-ui/core';
 import classnames from 'classnames';
-import { navBarCartData } from '../../bento/fileCentricCartWorkflowData';
-import { navBarData } from '../../bento/navigationBarData';
+import { navBarData, navBarCartData } from '../../bento/navigationBarData';
 import { initCart } from '../../pages/fileCentricCart/store/cart';
 import DropdownMenu from './components/DropdownMenu';
 import env from '../../utils/env';

@@ -3,13 +3,6 @@ import gql from 'graphql-tag';
 // headerIconSrc optimum size 100x100
 // wizardIconSrc optimum size 400x46.76
 
-export const navBarCartData = {
-  cartLabel: 'MY CASES',
-  cartLink: '/myCases',
-  cartIcon: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/icons/Icon-Cart-Navbar.svg',
-  cartIconAlt: 'cart_logo',
-};
-
 export const myCasesPageData = {
   myCasesMainTitle: 'My Cases :',
   myCasesSubTitle: 'Cases',
