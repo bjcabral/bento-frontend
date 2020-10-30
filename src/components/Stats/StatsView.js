@@ -2,6 +2,7 @@ import React from 'react';
 import {
   withStyles,
 } from '@material-ui/core';
+import classnames from 'classnames';
 import { globalStatsData as statsCount, statsStyling } from '../../bento/globalStatsData';
 
 const StatsView = ({ classes, data }) => (
@@ -12,7 +13,7 @@ const StatsView = ({ classes, data }) => (
       >
         {statsCount.slice(0, 6).map((stat) => (
           <div className={classes.statsGroup}>
-            <div className={classes.statsIcon}>
+            <div className={classnames(classes.statsIconDefault, classes.statsIcon)}>
               <img
                 src={stat.statIconSrc}
                 alt={stat.statIconAlt}
@@ -108,14 +109,14 @@ const styles = () => ({
   statsGroup: statsStyling.statGroup ? statsStyling.statGroup : {
     margin: '4px 32px',
   },
-  statsIcon: statsStyling.statsIcon ? statsStyling.statsIcon : {
+  statsIconDefault: {
     position: 'absolute',
     float: 'left',
     width: '28px',
     height: '28px',
-    marginTop: '8px',
     margin: '8px 0px 0px -35px',
   },
+  statsIcon: statsStyling.statsIcon,
 });
 
 export default withStyles(styles, { withTheme: true })(StatsView);
