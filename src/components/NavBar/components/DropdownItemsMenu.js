@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom';
 import {
   withStyles, Paper,
 } from '@material-ui/core';
+import { navBarstyling } from '../../../bento/navigationBarData';
 
 const CustomDropdownMenu = ({ classes, handleClick, dropDownElements }) => (
   <>
     <Paper className={classes.paper}>
-      <div className={classes.aboutItemsWrapper} id="aboutDropDown">
+      <div id="aboutDropDown">
         {dropDownElements.map((dropDownElementsItem) => (
           <NavLink
             className={classes.link}
@@ -25,30 +26,26 @@ const CustomDropdownMenu = ({ classes, handleClick, dropDownElements }) => (
 
 const styles = () => ({
   paper: {
-    background: '#142D64',
-    width: '170px',
-    padding: '0px 16px 18px 22px',
-    position: 'absolute',
-    marginTop: '-5px',
-    borderRadius: '0',
-    marginLeft: '18px',
+    background: navBarstyling.dropDownMenu.background,
+    width: navBarstyling.dropDownMenu.width,
+    padding: navBarstyling.dropDownMenu.padding,
+    position: navBarstyling.dropDownMenu.position,
+    margin: navBarstyling.dropDownMenu.margin,
+    borderRadius: navBarstyling.dropDownMenu.borderRadius,
   },
   link: {
-    textDecoration: 'none',
-    color: 'white',
-    fontFamily: 'Lato',
-    fontSize: '15px',
-    fontWeight: '800',
-    lineHeight: '12px',
-    display: 'block',
-    marginTop: '13px',
+    textDecoration: navBarstyling.dropDownLabelText.textDecoration,
+    color: navBarstyling.dropDownLabelText.color,
+    fontFamily: navBarstyling.dropDownLabelText.fontFamily,
+    fontSize: navBarstyling.dropDownLabelText.fontSize,
+    fontWeight: navBarstyling.dropDownLabelText.fontWeight,
+    lineHeight: navBarstyling.dropDownLabelText.lineHeight,
+    display: navBarstyling.dropDownLabelText.display,
+    marginTop: navBarstyling.dropDownLabelText.marginTop,
     '&:hover': {
-      cursor: 'pointer',
-      color: '#41A7FF',
+      cursor: navBarstyling.dropDownLabelText.hoverCursor,
+      color: navBarstyling.dropDownLabelText.hoverColor,
     },
-  },
-  aboutItemsWrapper: {
-    maxWidth: '150px',
   },
 });
 

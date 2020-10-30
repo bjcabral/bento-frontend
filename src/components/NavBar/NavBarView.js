@@ -120,7 +120,7 @@ const NavBar = ({
           <div className={classes.myCasesPosition}>
             <Button id="button_navbar_mycases" disableRipple weight="medium" className={classes.logotype} classes={{ root: classes.buttonRootNoRightPadding }}>
               <NavLink
-                className={classes.labelText}
+                className={classes.cartLabelText}
                 to={navBarCartData.cartLink}
               >
                 {navBarCartData.cartLabel}
@@ -136,11 +136,11 @@ const NavBar = ({
                 <Tooltip title="Cases" placement="bottom-end">
                   <span className={classes.badge}>
                     <img
-                      className={classes.cartLogoImg}
+                      className={classes.cartIcon}
                       src={navBarCartData.cartIcon}
                       alt={navBarCartData.cartIconAlt}
                     />
-                    <span className={classes.badgeText}>
+                    <span className={classes.cartCounter}>
                       {numberOfCases}
                     </span>
                   </span>
@@ -208,8 +208,8 @@ const NavBar = ({
 
 const styles = (theme) => ({
   myCasesPosition: {
-    position: 'absolute',
-    right: '20px',
+    position: navBarstyling.cartGroup.position,
+    right: navBarstyling.cartGroup.right,
   },
   logotype: {
     whiteSpace: 'nowrap',
@@ -238,16 +238,22 @@ const styles = (theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
-  cartLogoImg: {
-    width: '22px',
-    height: '22px',
-    marginLeft: '6px',
+  cartIcon: {
+    width: navBarstyling.cartIcon.width,
+    height: navBarstyling.cartIcon.height,
+    margin: navBarstyling.cartIcon.margin,
   },
   labelText: {
     textDecoration: navBarstyling.labelText.textDecoration,
     color: navBarstyling.labelText.color,
     fontFamily: navBarstyling.labelText.fontFamily,
     fontSize: navBarstyling.labelText.fontSize,
+  },
+  cartLabelText: {
+    textDecoration: navBarstyling.cartLabelText.textDecoration,
+    color: navBarstyling.cartLabelText.color,
+    fontFamily: navBarstyling.cartLabelText.fontFamily,
+    fontSize: navBarstyling.cartLabelText.fontSize,
   },
   activeLabel: {
     borderBottom: navBarstyling.labelText.activeLabel,
@@ -282,12 +288,12 @@ const styles = (theme) => ({
     position: 'relative',
     verticalAlign: 'middle',
   },
-  badgeText: {
-    height: '16px',
-    minWidth: '16px',
-    fontWeight: '600',
-    letterSpacing: '0.8px',
-    transform: 'scale(1) translate(0%, -50%)',
+  cartCounter: {
+    height: navBarstyling.cartCounter.height,
+    minWidth: navBarstyling.cartCounter.minWidth,
+    fontWeight: navBarstyling.cartCounter.fontWeight,
+    letterSpacing: navBarstyling.cartCounter.letterSpacing,
+    transform: navBarstyling.cartCounter.transform,
   },
   iconButtonRoot: {
     paddingTop: '9px',

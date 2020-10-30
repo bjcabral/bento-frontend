@@ -9,6 +9,26 @@ export const navBarstyling = {
     fontSize: '18px',
     margin: '0px 0px 0px 0px',
   },
+  dropDownMenu: {
+    background: '#142D64',
+    width: '170px',
+    padding: '0px 16px 18px 22px',
+    position: 'absolute',
+    margin: '-5px 0px 0px 18px',
+    borderRadius: '0',
+  },
+  dropDownLabelText: {
+    textDecoration: 'none',
+    color: 'white',
+    fontFamily: 'Lato',
+    fontSize: '15px',
+    fontWeight: '800',
+    lineHeight: '12px',
+    display: 'block',
+    marginTop: '13px',
+    hoverCursor: 'pointer',
+    hoverColor: '#41A7FF',
+  },
   labelText: {
     activeLabel: '1px solid  #FFFFFF',
     textDecoration: 'none',
@@ -17,24 +37,26 @@ export const navBarstyling = {
     fontSize: '13px',
   },
   cartGroup: {
-    backgroundColor: '#142D64',
-    height: '39px',
-    padding: '9px 20px 0px 20px',
+    position: 'absolute',
+    right: '20px',
   },
-  cartLabel: {
-    backgroundColor: '#142D64',
-    height: '39px',
-    padding: '9px 20px 0px 20px',
+  cartLabelText: {
+    textDecoration: 'none',
+    color: '#FFFFFF',
+    fontFamily: 'Nunito',
+    fontSize: '13px',
   },
   cartIcon: {
-    backgroundColor: '#142D64',
-    height: '39px',
-    padding: '9px 20px 0px 20px',
+    width: '22px',
+    height: '22px',
+    margin: '0px 0px 0px 6px',
   },
-  cartToolTip: {
-    backgroundColor: '#142D64',
-    height: '39px',
-    padding: '9px 20px 0px 20px',
+  cartCounter: {
+    height: '16px',
+    minWidth: '16px',
+    fontWeight: '600',
+    letterSpacing: '0.8px',
+    transform: 'scale(1) translate(0%, -50%)',
   },
 };
 
