@@ -2,7 +2,6 @@ import React from 'react';
 import {
   withStyles,
 } from '@material-ui/core';
-import classnames from 'classnames';
 import { globalStatsData as statsCount, statsStyling } from '../../bento/globalStatsData';
 
 const StatsView = ({ classes, data }) => (
@@ -13,7 +12,7 @@ const StatsView = ({ classes, data }) => (
       >
         {statsCount.slice(0, 6).map((stat) => (
           <div className={classes.statsGroup}>
-            <div className={classnames(classes.statsIconDefault, classes.statsIcon)}>
+            <div className={classes.statsIcon}>
               <img
                 src={stat.statIconSrc}
                 alt={stat.statIconAlt}
@@ -49,39 +48,24 @@ const StatsView = ({ classes, data }) => (
 );
 
 const styles = () => ({
-  statsSection: statsStyling.global.background ? {
+  statsSection: {
     top: '139px',
     width: '100%',
     zIndex: 999,
     position: 'fixed',
-    background: statsStyling.global.background,
-    textAlign: 'center',
-    left: 0,
-    right: 0,
-    display: 'flex',
-    justifyContent: 'flex-end',
-  } : {
-    top: '139px',
-    width: '100%',
-    zIndex: 999,
-    position: 'fixed',
-    background: '#8DCAFF',
+    background: statsStyling.global.background ? statsStyling.global.background : '#8DCAFF',
     textAlign: 'center',
     left: 0,
     right: 0,
     display: 'flex',
     justifyContent: 'flex-end',
   },
-  box: statsStyling.global.height ? {
+  box: {
     display: 'inline-flex',
-    height: statsStyling.global.height,
-    margin: '0 auto',
-  } : {
-    display: 'inline-flex',
-    height: '47px',
+    height: statsStyling.global.height ? statsStyling.global.height : '47px',
     margin: '0 auto',
   },
-  statTitle: statsStyling.statTitle ? statsStyling.statTitle : {
+  statTitle: {
     float: 'left',
     color: '#062D4F',
     fontFamily: 'Nunito',
@@ -106,17 +90,17 @@ const styles = () => ({
     margin: '6px 0px 0px 0px',
     fontWeight: 600,
   },
-  statsGroup: statsStyling.statGroup ? statsStyling.statGroup : {
+  statsGroup: {
+    // spacing between stats
     margin: '4px 32px',
   },
-  statsIconDefault: {
+  statsIcon: {
     position: 'absolute',
     float: 'left',
     width: '28px',
     height: '28px',
     margin: '8px 0px 0px -35px',
   },
-  statsIcon: statsStyling.statsIcon,
 });
 
 export default withStyles(styles, { withTheme: true })(StatsView);

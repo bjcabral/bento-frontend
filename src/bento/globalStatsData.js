@@ -7,34 +7,6 @@ export const statsStyling = {
     height: '47px',
     background: '#8DCAFF',
   },
-  statGroup: {
-    // spacing between stats
-    margin: '4px 32px',
-  },
-  statTitle: {
-    float: 'left',
-    color: '#062D4F',
-    fontFamily: 'Nunito',
-    fontWeight: 'bold',
-    fontSize: '11px',
-    letterSpacing: '1px',
-    margin: '14px 8px 0px 0px',
-    textTransform: 'uppercase',
-  },
-  statCount: {
-    color: '#0467BD',
-    fontFamily: 'Oswald',
-    fontSize: '20px',
-    margin: '6px 0px 0px 0px',
-    fontWeight: 600,
-  },
-  statsIcon: {
-    position: 'absolute',
-    float: 'left',
-    width: '28px',
-    height: '28px',
-    margin: '8px 0px 0px -35px',
-  },
 };
 
 export const globalStatsData = [
