@@ -65,14 +65,14 @@ const styles = (theme) => ({
     },
   },
   buttonRoot: {
-    padding: navBarstyling.global.padding,
+    padding: navBarstyling.global.padding ? navBarstyling.global.padding : '9px 20px 0px 20px',
   },
   buttonRootClicked: {
     borderBottom: '2px solid #FFFFFF',
   },
   dropDownicon: {
-    fontSize: navBarstyling.dropDownIcon.fontSize,
-    margin: navBarstyling.dropDownIcon.margin,
+    fontSize: navBarstyling.dropDownIcon.fontSize ? navBarstyling.dropDownIcon.fontSize : '18px',
+    margin: navBarstyling.dropDownIcon.margin ? navBarstyling.dropDownIcon.margin : '0px 0px 0px 0px',
   },
   aboutMenu: {
     display: 'inline-block',

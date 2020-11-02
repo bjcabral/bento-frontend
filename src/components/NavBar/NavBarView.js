@@ -208,8 +208,8 @@ const NavBar = ({
 
 const styles = (theme) => ({
   myCasesPosition: {
-    position: navBarstyling.cartGroup.position,
-    right: navBarstyling.cartGroup.right,
+    position: 'absolute',
+    right: '20px',
   },
   logotype: {
     whiteSpace: 'nowrap',
@@ -229,7 +229,7 @@ const styles = (theme) => ({
     margin: '0 auto',
   },
   appBar: {
-    backgroundColor: navBarstyling.global.backgroundColor,
+    backgroundColor: navBarstyling.global.backgroundColor ? navBarstyling.global.backgroundColor : '#142D64',
     marginTop: '100px',
     width: '100vw',
     zIndex: theme.zIndex.drawer + 1,
@@ -239,24 +239,24 @@ const styles = (theme) => ({
     }),
   },
   cartIcon: {
-    width: navBarstyling.cartIcon.width,
-    height: navBarstyling.cartIcon.height,
-    margin: navBarstyling.cartIcon.margin,
+    width: '22px',
+    height: '22px',
+    margin: '0px 0px 0px 6px',
   },
   labelText: {
-    textDecoration: navBarstyling.labelText.textDecoration,
-    color: navBarstyling.labelText.color,
-    fontFamily: navBarstyling.labelText.fontFamily,
-    fontSize: navBarstyling.labelText.fontSize,
+    textDecoration: 'none',
+    color: '#FFFFFF',
+    fontFamily: 'Nunito',
+    fontSize: '13px',
   },
   cartLabelText: {
-    textDecoration: navBarstyling.cartLabelText.textDecoration,
-    color: navBarstyling.cartLabelText.color,
-    fontFamily: navBarstyling.cartLabelText.fontFamily,
-    fontSize: navBarstyling.cartLabelText.fontSize,
+    textDecoration: 'none',
+    color: '#FFFFFF',
+    fontFamily: 'Nunito',
+    fontSize: '13px',
   },
   activeLabel: {
-    borderBottom: navBarstyling.labelText.activeLabel,
+    borderBottom: '1px solid  #FFFFFF',
   },
   appBarShift: {
     paddingRight: '0px !important',
@@ -272,16 +272,16 @@ const styles = (theme) => ({
     flexShrink: 0,
   },
   toolbar: {
-    minHeight: navBarstyling.global.height,
+    minHeight: navBarstyling.global.height ? navBarstyling.global.height : '39px',
     paddingRight: '45px',
     paddingLeft: '45px',
     alignItems: 'flex-start',
   },
   buttonRoot: {
-    padding: navBarstyling.global.padding,
+    padding: navBarstyling.global.padding ? navBarstyling.global.padding : '9px 20px 0px 20px',
   },
   buttonRootNoRightPadding: {
-    padding: navBarstyling.global.padding,
+    padding: navBarstyling.global.padding ? navBarstyling.global.padding : '9px 20px 0px 20px',
   },
   badge: {
     display: 'inline-flex',
@@ -289,11 +289,11 @@ const styles = (theme) => ({
     verticalAlign: 'middle',
   },
   cartCounter: {
-    height: navBarstyling.cartCounter.height,
-    minWidth: navBarstyling.cartCounter.minWidth,
-    fontWeight: navBarstyling.cartCounter.fontWeight,
-    letterSpacing: navBarstyling.cartCounter.letterSpacing,
-    transform: navBarstyling.cartCounter.transform,
+    height: '16px',
+    minWidth: '16px',
+    fontWeight: '600',
+    letterSpacing: '0.8px',
+    transform: 'scale(1) translate(0%, -50%)',
   },
   iconButtonRoot: {
     paddingTop: '9px',

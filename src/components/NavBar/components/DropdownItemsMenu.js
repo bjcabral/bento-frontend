@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import {
   withStyles, Paper,
 } from '@material-ui/core';
-import { navBarstyling } from '../../../bento/navigationBarData';
 
 const CustomDropdownMenu = ({ classes, handleClick, dropDownElements }) => (
   <>
@@ -26,25 +25,25 @@ const CustomDropdownMenu = ({ classes, handleClick, dropDownElements }) => (
 
 const styles = () => ({
   paper: {
-    background: navBarstyling.dropDownMenu.background,
-    width: navBarstyling.dropDownMenu.width,
-    padding: navBarstyling.dropDownMenu.padding,
-    position: navBarstyling.dropDownMenu.position,
-    margin: navBarstyling.dropDownMenu.margin,
-    borderRadius: navBarstyling.dropDownMenu.borderRadius,
+    background: '#142D64',
+    width: '170px',
+    padding: '0px 16px 18px 22px',
+    position: 'absolute',
+    margin: '-5px 0px 0px 18px',
+    borderRadius: '0',
   },
   link: {
-    textDecoration: navBarstyling.dropDownLabelText.textDecoration,
-    color: navBarstyling.dropDownLabelText.color,
-    fontFamily: navBarstyling.dropDownLabelText.fontFamily,
-    fontSize: navBarstyling.dropDownLabelText.fontSize,
-    fontWeight: navBarstyling.dropDownLabelText.fontWeight,
-    lineHeight: navBarstyling.dropDownLabelText.lineHeight,
-    display: navBarstyling.dropDownLabelText.display,
-    marginTop: navBarstyling.dropDownLabelText.marginTop,
+    textDecoration: 'none',
+    color: 'white',
+    fontFamily: 'Lato',
+    fontSize: '15px',
+    fontWeight: '800',
+    lineHeight: '12px',
+    display: 'block',
+    marginTop: '13px',
     '&:hover': {
-      cursor: navBarstyling.dropDownLabelText.hoverCursor,
-      color: navBarstyling.dropDownLabelText.hoverColor,
+      cursor: 'pointer',
+      color: '#41A7FF',
     },
   },
 });
