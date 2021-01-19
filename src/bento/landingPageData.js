@@ -5,13 +5,13 @@ import gql from 'graphql-tag';
 // Tile1 Tile2 Tile3 images 293x349 px
 // Tile4 image optimum size 600x 436 px
 export const landingPageData = {
-  callToActionTitle: 'Explore, Analyze, Visualize Clinical Trial Data Sets',
-  callToActionDescription: 'Model, Store and Share your Data Sets using the Bento Framework for Data Sharing Platforms.',
+  callToActionTitle: 'CTOS Project Management and Operations Office',
+  callToActionDescription: 'A Program Management System powered by BENTO Framework',
   callToActionButtonText: 'EXPLORE THE SITE',
   callToActionLink: '/cases',
   landingPageHero: {
     alt: 'Alt tag1',
-    img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/Hero_Graphic.png',
+    img: 'https://raw.githubusercontent.com/cabralbj/bento-local/bento-frontend/master/src/assets/landing/bento-pmo-logo.png',
   },
   landingPageStatsBar: [
     {
@@ -19,16 +19,12 @@ export const landingPageData = {
       statAPI: 'numberOfPrograms',
     },
     {
-      statTitle: 'Arms',
+      statTitle: 'Projects',
       statAPI: 'numberOfStudies',
     },
     {
-      statTitle: 'Cases',
+      statTitle: 'PIDs',
       statAPI: 'numberOfSubjects',
-    },
-    {
-      statTitle: 'samples',
-      statAPI: 'numberOfSamples',
     },
     {
       statTitle: 'files',

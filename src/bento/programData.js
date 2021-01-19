@@ -52,17 +52,12 @@ const table = {
       header: 'End Date',
     },
     {
-      dataField: 'pubmed_id',
-      header: 'PubMed ID',
-      link: 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}',
-    },
-    {
       dataField: 'num_studies',
-      header: 'Number of ARMs',
+      header: 'Number of Projects',
     },
     {
       dataField: 'num_subjects',
-      header: 'Associated Cases',
+      header: 'Associated Files',
     },
   ],
 };

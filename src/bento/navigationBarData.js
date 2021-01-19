@@ -25,7 +25,7 @@ export const navBarData = [
     link: '/programs',
   },
   {
-    labelText: 'cases',
+    labelText: 'Projects',
     type: 'link',
     link: '/cases',
   },

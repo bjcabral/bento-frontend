@@ -17,7 +17,7 @@ const breadCrumb = {
 
 // --------------- Aggregated count configuration --------------
 const aggregateCount = {
-  labelText: 'Cases',
+  labelText: 'Projects',
   dataField: 'num_subjects',
   link: '/cases',
   display: true,
@@ -74,7 +74,7 @@ const rightPanel = {
   widget: [
     {
       dataField: 'diagnoses',
-      label: 'Diagnosis',
+      label: 'Projects',
       display: true,
     },
   ],
@@ -107,24 +107,24 @@ const table = {
   columns: [
     {
       dataField: 'study_acronym',
-      header: 'Arm',
+      header: 'Project',
       link: '/arm/{study_acronym}',
     },
     {
       dataField: 'study_name',
-      header: 'Arm Name',
+      header: 'Project Name',
     },
     {
       dataField: 'study_full_description',
-      header: 'Arm Description',
+      header: 'Project Description',
     },
     {
       dataField: 'study_type',
-      header: 'Arm Type',
+      header: 'PID',
     },
     {
       dataField: 'num_subjects',
-      header: 'Associated Cases',
+      header: 'Associated Files',
     },
   ],
 };
