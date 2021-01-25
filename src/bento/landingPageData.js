@@ -43,14 +43,14 @@ export const landingPageData = {
     alt: '',
     img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileProgam.png',
     titleText: 'Programs',
-    descriptionText: 'As "Trusted Partners" and as part of The Frederick National Laboratory for Cancer Research (FNL) mission, CTOS supports a variety of program and projects, including but not limited to Data Science, Data Management, Data Analytics, Data Coordination, Project Management, Contract Management, and Project Finance Management, Software Development and Engineering, Software Quality Assurance, Web Design and Development, among others.',
+    descriptionText: 'As "Trusted Partners" and in support of the Frederick National Laboratory for Cancer Research (FNL) mission, CTOS supports a variety of program and projects, including but not limited to Data Science, Data Management, Data Analytics, Data Coordination, Project Management, Contract Management, and Project Finance Management, Software Development and Engineering, Software Quality Assurance, Web Design and Development, among others.',
     callToActionText: 'View',
     callToActionLink: '/programs', // This links to the Programs Listing Page.
   },
   tile3: {
     alt: '',
     img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tilectosResources.png',
-    titleText: 'CTOS PMO Resources',
+    titleText: 'PMO Resources',
     descriptionText: 'Links to resources to aid our Project Managers and other professional in their execution of day-to-day operations.',
     callToActionText: 'Read More',
     callToActionLink: '/resources', // Link to the "Resources" Static Page
