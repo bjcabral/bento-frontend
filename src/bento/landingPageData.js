@@ -11,7 +11,7 @@ export const landingPageData = {
   callToActionLink: '/cases',
   landingPageHero: {
     alt: 'Alt tag1',
-    img: 'https://raw.githubusercontent.com/cabralbj/bento-local/bento-frontend/master/src/assets/landing/bento-pmo-logo.png',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/Hero_Graphic.png',
   },
   landingPageStatsBar: [
     {
@@ -19,47 +19,47 @@ export const landingPageData = {
       statAPI: 'numberOfPrograms',
     },
     {
-      statTitle: 'Projects',
+      statTitle: 'Task Orders',
       statAPI: 'numberOfStudies',
     },
     {
-      statTitle: 'PIDs',
+      statTitle: 'Projects',
       statAPI: 'numberOfSubjects',
     },
     {
-      statTitle: 'files',
+      statTitle: 'Files',
       statAPI: 'numberOfFiles',
     },
   ],
   tile1: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileAbout.png',
-    titleText: 'The Bento Framework',
-    descriptionText: 'Effective data management is key to scientific discovery. Bento is an open source framework, developed by the Frederick National Laboratory for Cancer Research, to support the creation of data sharing platforms, that adhere to the FAIR principles of scientific data management.',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileAbout.png',
+    titleText: 'CTOS Project Management Office',
+    descriptionText: 'The CTOS Program/Project Management Office is committed to excelence in service. Following the latest Project Management standards, best practices, and our expertise in Data Science, Software Engineering and Project Management we excell in our role as "Trusted Partners" for our Government client.',
     callToActionText: 'Read More',
     callToActionLink: '/bento', // This links to the "About" static page.
   },
   tile2: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileProgam.png',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileProgam.png',
     titleText: 'Programs',
-    descriptionText: 'Access data from the TAILORx clinical trial, on this data sharing platform, built on Bento.',
+    descriptionText: 'As "Trusted Partners" and as part of The Frederick National Laboratory for Cancer Research (FNL) mission, CTOS supports a variety of program and projects, including but not limited to Data Science, Data Management, Data Analytics, Data Coordination, Project Management, Contract Management, and Project Finance Management, Software Development and Engineering, Software Quality Assurance, Web Design and Development, among others.',
     callToActionText: 'View',
     callToActionLink: '/programs', // This links to the Programs Listing Page.
   },
   tile3: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileAnalytics.png',
-    titleText: 'Resources',
-    descriptionText: 'Use Bento to build your own data sharing platform.',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tilectosResources.png',
+    titleText: 'CTOS PMO Resources',
+    descriptionText: 'Links to resources to aid our Project Managers and other professional in their execution of day-to-day operations.',
     callToActionText: 'Read More',
     callToActionLink: '/resources', // Link to the "Resources" Static Page
   },
   tile4: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileCases.png',
-    titleText: 'Cases',
-    descriptionText: 'Analyze cases from the TAILORx clinical trial.',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileCases.png',
+    titleText: 'Projects',
+    descriptionText: 'Access the list of active projects.',
     callToActionText: 'Explore',
     callToActionLink: '/cases', // This links to the cases dashboard.
   },

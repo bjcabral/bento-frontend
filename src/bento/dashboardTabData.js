@@ -12,14 +12,13 @@ export const tooltipContent = {
 // --------------- Dahboard Table external link configuration --------------
 // Ideal size for externalLinkIcon is 16x16 px
 export const externalLinkIcon = {
-  src: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/externalLinkIcon.svg',
+  src: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/program/externalLinkIcon.svg',
   alt: 'External link icon',
 };
 
 // --------------- Tabs Table configuration --------------
 export const tabContainers = [
   {
-
     name: 'Cases',
     dataField: 'dataCase',
     api: 'GET_CASES_OVERVIEW_QUERY',
@@ -49,7 +48,7 @@ export const tabContainers = [
     columns: [
       {
         dataField: 'subject_id',
-        header: 'Case ID',
+        header: 'Project ID',
         sort: 'asc',
         link: '/case/{subject_id}',
         primary: true,
@@ -70,50 +69,50 @@ export const tabContainers = [
       },
       {
         dataField: 'study_acronym',
-        header: 'Arm',
+        header: 'Task Order',
         sort: 'asc',
         link: '/arm/{study_acronym}',
         display: true,
       },
       {
         dataField: 'diagnosis',
-        header: 'Diagnosis',
+        header: 'Project Name',
         sort: 'asc',
         display: true,
       },
       {
         dataField: 'recurrence_score',
-        header: 'Recurrence Score',
+        header: 'Research Area',
         sort: 'asc',
         display: true,
       },
       {
         dataField: 'tumor_size',
-        header: 'Tumor Size (cm)',
+        header: 'UoW',
         sort: 'asc',
         display: true,
       },
       {
         dataField: 'er_status',
-        header: 'ER Status',
+        header: 'Approved Budget',
         sort: 'asc',
         display: true,
       },
       {
         dataField: 'pr_status',
-        header: 'PR Status',
+        header: 'Funded Amount',
         sort: 'asc',
         display: true,
       },
       {
         dataField: 'age_at_index',
-        header: 'Age (years)',
+        header: 'Cost to Dae',
         sort: 'asc',
         display: true,
       },
       {
         dataField: 'survival_time',
-        header: 'Survival (days)',
+        header: 'ETC',
         sort: 'asc',
         display: true,
       },
@@ -124,114 +123,6 @@ export const tabContainers = [
     tableID: 'case_tab_table',
     selectableRows: true,
     tabIndex: '0',
-    downloadFileName: 'Bento_Dashboard_cases_download',
-    headerPagination: true,
-    footerPagination: true,
-  },
-  {
-    name: 'Samples',
-    dataField: 'dataSample',
-    api: 'GET_SAMPLES_OVERVIEW_QUERY',
-    count: 'numberOfSamples',
-    paginationAPIField: 'sampleOverview',
-    paginationAPIFieldDesc: 'sampleOverviewDesc',
-    dataKey: 'sample_id',
-    saveButtonDefaultStyle: {
-      color: '#fff',
-      backgroundColor: '#00AEEF',
-      opacity: '1',
-      border: '0px',
-      cursor: 'pointer',
-    },
-    DeactiveSaveButtonDefaultStyle: {
-      opacity: '0.3',
-      cursor: 'auto',
-    },
-    ActiveSaveButtonDefaultStyle: {
-      cursor: 'pointer',
-      opacity: 'unset',
-      border: 'unset',
-    },
-
-    columns: [
-      {
-        dataField: 'sample_id',
-        header: 'Sample ID',
-        sort: 'asc',
-        primary: true,
-        display: true,
-      },
-      {
-        dataField: 'subject_id',
-        header: 'Case ID',
-        sort: 'asc',
-        link: '/case/{subject_id}',
-        display: true,
-      },
-      {
-        dataField: 'program',
-        header: 'Program Code',
-        sort: 'asc',
-        link: '/program/{program_id}',
-        display: true,
-      },
-      {
-        dataField: 'program_id',
-        header: 'Program ID',
-        sort: 'asc',
-        display: false,
-      },
-      {
-        dataField: 'arm',
-        header: 'Arm',
-        sort: 'asc',
-        link: '/arm/{arm}',
-        display: true,
-      },
-      {
-        dataField: 'diagnosis',
-        header: 'Diagnosis',
-        sort: 'asc',
-        display: true,
-      },
-      {
-        dataField: 'tissue_type',
-        header: 'Tissue Type',
-        sort: 'asc',
-        display: true,
-      },
-      {
-        dataField: 'tissue_composition',
-        header: 'Tissue Composition',
-        sort: 'asc',
-        display: true,
-      },
-      {
-        dataField: 'sample_anatomic_site',
-        header: 'Sample Anatomic Site',
-        sort: 'asc',
-        display: true,
-      },
-      {
-        dataField: 'sample_procurement_method',
-        header: 'Sample Procurement Method',
-        sort: 'asc',
-        display: true,
-      },
-      {
-        dataField: 'platform',
-        header: 'platform',
-        sort: 'asc',
-        display: true,
-      },
-    ],
-    id: 'sample_tab',
-    onRowsSelect: 'type3',
-    disableRowSelection: 'type2',
-    buttonText: 'Add Selected Files',
-    tableID: 'sample_tab_table',
-    selectableRows: true,
-    tabIndex: '1',
     downloadFileName: 'Bento_Dashboard_cases_download',
     headerPagination: true,
     footerPagination: true,
@@ -359,15 +250,9 @@ export const tabContainers = [
 export const tabs = [
   {
     id: 'case_tab',
-    title: 'Cases',
+    title: 'Projects',
     dataField: 'dataCase',
     count: 'numberOfSubjects',
-  },
-  {
-    id: 'sample_tab',
-    title: 'Samples',
-    dataField: 'dataSample',
-    count: 'numberOfSamples',
   },
   {
     id: 'file_tab',
@@ -384,12 +269,6 @@ export const tabIndex = [
     primaryColor: '#D6F2EA',
     secondaryColor: '#FFDFB8',
     selectedColor: '#10A075',
-  },
-  {
-    title: 'Samples',
-    primaryColor: '#CFEDF9',
-    secondaryColor: '#C9F1F1',
-    selectedColor: '#0DAFEC',
   },
   {
     title: 'Files',
@@ -502,20 +381,6 @@ export const DASHBOARD_QUERY = gql`{
         file_id
       }
   }
-  sampleOverview(first: 10) {
-    sample_id
-    subject_id
-    program
-    program_id
-    arm
-    diagnosis
-    tissue_type
-    tissue_composition
-    sample_anatomic_site
-    sample_procurement_method
-    platform
-    files 
-}
 fileOverview(first: 10) {
   file_id
   file_name

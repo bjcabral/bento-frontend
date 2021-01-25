@@ -74,7 +74,7 @@ const rightPanel = {
   widget: [
     {
       dataField: 'diagnoses',
-      label: 'Projects',
+      label: 'Task Orders',
       display: true,
     },
   ],
@@ -94,7 +94,7 @@ const table = {
   // Set 'display' to false to hide the table entirely
   display: true,
   // Table title
-  title: 'ARMS',
+  title: 'TASK ORDERS',
   // Field name for table data, need to be updated only when using a different GraphQL query
   dataField: 'studies',
   // Value must be one of the 'field' in columns
@@ -107,20 +107,16 @@ const table = {
   columns: [
     {
       dataField: 'study_acronym',
-      header: 'Project',
+      header: 'Task Order ID',
       link: '/arm/{study_acronym}',
     },
     {
       dataField: 'study_name',
-      header: 'Project Name',
+      header: 'Task Order Name',
     },
     {
       dataField: 'study_full_description',
-      header: 'Project Description',
-    },
-    {
-      dataField: 'study_type',
-      header: 'PID',
+      header: 'Task Order Description',
     },
     {
       dataField: 'num_subjects',

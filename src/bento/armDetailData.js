@@ -9,7 +9,7 @@ export const tooltipContent = {
 
 // -------------- Case ID area configurations --------------
 const header = {
-  label: 'Arm',
+  label: 'Task Order',
   dataField: 'study_acronym',
 };
 
@@ -22,7 +22,7 @@ const subsections = [
       // Each object here represents a set of label:value pair of a property
       // A maximum of 10 properties are allowed
       {
-        label: 'Arm',
+        label: 'Task Order ID',
         dataField: 'study_acronym',
         // link property specify URL value should link to
         // space holder "{study_acronym}" will be replaced by
@@ -33,15 +33,15 @@ const subsections = [
         // external links must have URL scheme part such as "https://"
       },
       {
-        label: 'Arm Name',
+        label: 'Task Order Name',
         dataField: 'study_name',
       },
       {
-        label: 'Arm Type',
+        label: 'Task Order Type',
         dataField: 'study_type',
       },
       {
-        label: 'Arm Description',
+        label: 'Task Order Description',
         dataField: 'study_full_description',
       },
     ],

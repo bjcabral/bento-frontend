@@ -102,7 +102,7 @@ const ArmDetail = ({ data, classes }) => {
             { /* Case Count */ }
             <div className={classes.headerButton}>
               <div className={classes.headerButtonLinkArea}>
-                <span className={classes.headerButtonLinkText}>Number of cases:</span>
+                <span className={classes.headerButtonLinkText}>Number of Projects:</span>
                 <Link
                   className={classes.headerButtonLink}
                   to={(location) => ({ ...location, pathname: '/cases' })}
@@ -134,7 +134,7 @@ const ArmDetail = ({ data, classes }) => {
                 {/* Diagnosis donut */}
                 <div className={classes.widgetContainer}>
                   <Widget
-                    title="Diagnosis"
+                    title="Projects"
                     color="#0296C9"
                     bodyClass={classes.fullHeightBody}
                     className={classes.card}
