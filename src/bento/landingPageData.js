@@ -41,7 +41,7 @@ export const landingPageData = {
   },
   tile2: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileProgam.png',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileProgamManagement.png',
     titleText: 'Programs',
     descriptionText: 'As "Trusted Partners" and in support of the Frederick National Laboratory for Cancer Research (FNL) mission, CTOS supports a variety of program and projects, including but not limited to Data Science, Data Management, Data Analytics, Data Coordination, Project Management, Contract Management, and Project Finance Management, Software Development and Engineering, Software Quality Assurance, Web Design and Development, among others.',
     callToActionText: 'View',
