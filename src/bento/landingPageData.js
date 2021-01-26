@@ -33,15 +33,15 @@ export const landingPageData = {
   ],
   tile1: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileAbout.png',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileAboutFNL.png',
     titleText: 'CTOS Project Management Office',
-    descriptionText: 'The CTOS Program/Project Management Office is committed to excelence in service. Following the latest Project Management standards, best practices, and our expertise in Data Science, Software Engineering and Project Management we excell in our role as "Trusted Partners" for our Government client.',
+    descriptionText: 'The Center for Technology Operations Support (CTOS) Program/Project Management Office is committed to excelence in service. Following the latest Project Management standards, best practices, and our expertise in Data Science, Software Engineering and Project Management we excell in our role as "Trusted Partners" for our Government client and contribution to the mission of the Frederick National Laboratory.',
     callToActionText: 'Read More',
     callToActionLink: '/bento', // This links to the "About" static page.
   },
   tile2: {
     alt: '',
-    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileProgamManagement.png',
+    img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileProgramManagement.png',
     titleText: 'Programs',
     descriptionText: 'As "Trusted Partners" and in support of the Frederick National Laboratory for Cancer Research (FNL) mission, CTOS supports a variety of program and projects, including but not limited to Data Science, Data Management, Data Analytics, Data Coordination, Project Management, Contract Management, and Project Finance Management, Software Development and Engineering, Software Quality Assurance, Web Design and Development, among others.',
     callToActionText: 'View',
