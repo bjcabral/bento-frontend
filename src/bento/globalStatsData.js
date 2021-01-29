@@ -17,12 +17,12 @@ export const globalStatsData = [
     statAPI: 'numberOfPrograms',
   },
   {
-    statTitle: 'Projects',
+    statTitle: 'Task Orders',
     type: 'field',
     statAPI: 'numberOfStudies',
   },
   {
-    statTitle: 'PIDs',
+    statTitle: 'Projects',
     type: 'field',
     statAPI: 'numberOfSubjects',
   },

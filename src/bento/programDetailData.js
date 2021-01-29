@@ -120,7 +120,7 @@ const table = {
     },
     {
       dataField: 'num_subjects',
-      header: 'Associated Files',
+      header: 'Number of Projects',
     },
   ],
 };

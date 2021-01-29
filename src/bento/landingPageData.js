@@ -5,8 +5,8 @@ import gql from 'graphql-tag';
 // Tile1 Tile2 Tile3 images 293x349 px
 // Tile4 image optimum size 600x 436 px
 export const landingPageData = {
-  callToActionTitle: 'CTOS Project Management and Operations Office',
-  callToActionDescription: 'A Program Management System powered by BENTO Framework',
+  callToActionTitle: 'Center for Technology Operations Support (CTOS)',
+  callToActionDescription: 'Program and Project Management System',
   callToActionButtonText: 'EXPLORE THE SITE',
   callToActionLink: '/cases',
   landingPageHero: {
@@ -34,8 +34,8 @@ export const landingPageData = {
   tile1: {
     alt: '',
     img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileAboutFNL.png',
-    titleText: 'CTOS Project Management Office',
-    descriptionText: 'The Center for Technology Operations Support (CTOS) Program/Project Management Office is committed to excelence in service. Following the latest Project Management standards, best practices, and our expertise in Data Science, Software Engineering and Project Management we excell in our role as "Trusted Partners" for our Government client and contribution to the mission of the Frederick National Laboratory.',
+    titleText: 'CTOS Project Mamangement Office',
+    descriptionText: 'CTO PMO is committed to excelence in service. Following the latest Project Management standards, best practices, and our expertise in Data Science, Software Engineering and Project Management we excell in our role as "Trusted Partners" for our Government client and contribution to the mission of the Frederick National Laboratory.',
     callToActionText: 'Read More',
     callToActionLink: '/bento', // This links to the "About" static page.
   },

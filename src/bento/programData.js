@@ -53,11 +53,11 @@ const table = {
     },
     {
       dataField: 'num_studies',
-      header: 'Number of Projects',
+      header: 'Number of Task Orders',
     },
     {
       dataField: 'num_subjects',
-      header: 'Associated Files',
+      header: 'Number of Projects',
     },
   ],
 };

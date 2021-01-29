@@ -34,7 +34,7 @@ export const navBarData = [
     type: 'dropdown',
     dropDownLinks: [
       {
-        labelText: 'Bento',
+        labelText: 'CTOS',
         link: '/bento',
       },
       {
