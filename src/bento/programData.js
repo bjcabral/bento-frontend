@@ -44,19 +44,19 @@ const table = {
       header: 'Program Name',
     },
     {
-      dataField: 'start_date',
+      dataField: 'program_start_date',
       header: 'Start Date',
     },
     {
-      dataField: 'end_date',
+      dataField: 'program_end_date',
       header: 'End Date',
     },
     {
-      dataField: 'num_studies',
+      dataField: 'num_task_orders',
       header: 'Number of Task Orders',
     },
     {
-      dataField: 'num_subjects',
+      dataField: 'num_projects',
       header: 'Number of Projects',
     },
   ],
@@ -70,9 +70,6 @@ const GET_PROGRAMS_DATA_QUERY = gql`{
  program_name
  start_date
  end_date
- pubmed_id
- num_studies
- num_subjects
  }
 }
  `;
