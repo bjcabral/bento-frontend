@@ -68,8 +68,7 @@ const GET_PROGRAMS_DATA_QUERY = gql`{
  program_acronym
  program_id
  program_name
- start_date
- end_date
+ program_start_date
  }
 }
  `;
