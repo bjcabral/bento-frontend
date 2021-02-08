@@ -52,11 +52,19 @@ const table = {
       header: 'End Date',
     },
     {
+<<<<<<< HEAD
       dataField: 'task_orders',
       header: 'Number of Task Orders',
     },
     {
       dataField: 'projects',
+=======
+      dataField: 'num_task_orders',
+      header: 'Number of Task Orders',
+    },
+    {
+      dataField: 'num_projects',
+>>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
       header: 'Number of Projects',
     },
   ],
@@ -69,9 +77,12 @@ const GET_PROGRAMS_DATA_QUERY = gql`{
  program_id
  program_name
  program_start_date
+<<<<<<< HEAD
  program_end_date
  task_orders
  projects
+=======
+>>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
  }
 }
  `;

@@ -27,7 +27,11 @@ export const globalStatsData = [
     statAPI: 'numberOfSubjects',
   },
   {
+<<<<<<< HEAD
     statTitle: 'Files',
+=======
+    statTitle: 'files',
+>>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
     type: 'field',
     statAPI: 'numberOfFiles',
   },

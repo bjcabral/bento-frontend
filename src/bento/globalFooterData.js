@@ -14,10 +14,10 @@ export default {
   // Ideal size for icon is 20x20 px
   link_sections: [
     {
-      title: 'About Bento',
+      title: 'About CTOS',
       items: [
         {
-          text: 'Purpose',
+          text: 'Mission',
           link: '/bento',
         },
         {
