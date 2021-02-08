@@ -1,16 +1,18 @@
 - page: '/bento'
-  title: "The BIDS's Center for Technology Operations Support (CTOS)"
-  primaryContentImage: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/about/CTOS_logo.png'
+  title: "The BID's Center for Technology Operations Support (CTOS)"
+  primaryContentImage: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/about/CTOS-logo.png'
   content:
-    - paragraph: "Bento is an open source framework developed by the Frederick National Laboratory for Cancer Research to support data sharing. It provides a structure to enable groups to quickly stand up and then configure a data sharing environment for life science data - groups can use Bento to share data amongst themselves or with a larger community. Bento's reference implementation contains a data model that is compatible with the Cancer Research Data Commons' Harmonized model (CRDC-H) such that Bento instances can be connected into and inter-operate with the CRDC. Users can customize the data model for their own needs. Bento also contains a User Interface and an API for programmatic access."
-    - paragraph: "$$*CONTACT:*$$ bento-help@nih.gov"
+    - paragraph: "Since 2005, The FNL Biomedical Informatics and Data Science (BIDS)'s Center for Technology Operations Support (CTOS) had supported our client the NCI under the concept of being a 'Trusted-partner'. We focuse on the application of best practices and state-of-the art technologies in data science and FAIR-based principles of data sharing to advance discoveries in cancer research and infectious diseases. At CTOS we believe that the proliferation of scientific data can be exploit to the advantage of researchers across the world if we provide the tools and platforms necessary for the effective data exploration, discovery, analysis, and data sharing."
+    - paragraph: "Following FAIR principles for data sharing (Findable, Accessible, Interoperable, and Reusable) CTOS provides data science support for many NIH/NCI organizations including: The NCI Center for Biomedical Informatics and Information Technology (CBIIT) where we partnered with the government in the development of the Cancer Research Data Commons platform, contributed in the early stages of the Molecular Analysis for Therapy Choice (MATCH) program. In collaboration with CBIIT, CTOS developed BENTO, the core data sharing platform for the CRDC. A state-state-of-the-art Cloud-based micro-services platform based on FAIR principles and easy to deploy and use."
+    - paragraph: "CTOS operates over a 100-million dollar a year portfolio of projects in support of the National Cancer Institute and other NIH organizations, including initiatives such as: The Data Commons Services, Pediatric Cancer Data Ecosystem, Imaging Informatics and Infrastructure, Clinical Trials Infrastructure, Application Support Services, Intramural Biomedical Informatics and Software, Semantic Operations and Software, Proteomic Data Management, DCP Desk, OCG Data Coordinating Center, NIAID Data Ecosyste Framework, Serology Science Network Coordinating Center, Cancer Data Ecosystem, and The Integrated Canine Data Common."
+    - paragraph: "$$*CONTACT:*$$ ctos-pmo@nih.gov"
 - page: "/resources"
   primaryContentImage: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/about/About_Resources.png'
   title: "Resources"
   content:
     - paragraph: "Bento is a modular, data agnostic, cloud-enable software framework for building data sharing platforms, for life science and clinical research. Instructions on using the Bento framework to set up your own platform may be found $$[here](https://cbiit.github.io/bento-docs/)."
     - paragraph: "All code necessary to use Bento is provided in the form of Docker containers. However, we do provide our code to the public for research, usage, forking and pull requests. Here are the repos for:"
-    - paragraph: "•	Core Data Model: $$[https://github.com/bjcabral/bento-model](https://github.com/CBIIT/bento-model)$$"
+    - paragraph: "•	Core Data Model: $$[https://github.com/bjcabral/bento-model](https://github.com/bjcabral/bento-model)$$"
     - paragraph: "•	Frontend: $$[https://github.com/bjcabral/bento-frontend](https://github.com/bjcabral/bento-frontend)"
     - paragraph: "•	File and Data Loaders: $$[https://github.com/bjcabral/icdc-dataloader](https://github.com/bjcabral/icdc-dataloader)"
   secondaryZoomImageTitle: "The Bento Core Data Model"
