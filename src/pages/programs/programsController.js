@@ -8,8 +8,7 @@ import { GET_PROGRAMS_DATA_QUERY } from '../../bento/programData';
 const container = () => {
   const { loading, error, data } = useQuery(GET_PROGRAMS_DATA_QUERY);
   if (loading) return <CircularProgress />;
-  if (error) return <Typography variant="headline" color="error" size="sm">{error ? `An error has occurred in loading stats component: ${error}` : 'Recieved wrong data'}</Typography>;
+  if (error) return <Typography variant="headline" color="error" size="sm">{error ? `An error has occurred in loading stats component: ${error}` : 'Received wrong data'}</Typography>;
   return <View data={data} />;
 };
-
 export default container;

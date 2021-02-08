@@ -17,9 +17,9 @@ const breadCrumb = {
 
 // --------------- Aggregated count configuration --------------
 const aggregateCount = {
-  labelText: 'Cases',
-  dataField: 'num_subjects',
-  link: '/cases',
+  labelText: 'Programs',
+  dataField: 'programs',
+  link: '/program',
   display: true,
 };
 
@@ -73,14 +73,14 @@ const leftPanel = {
 const rightPanel = {
   widget: [
     {
-      dataField: 'diagnoses',
-      label: 'Diagnosis',
+      dataField: 'project_id',
+      label: 'Projects',
       display: true,
     },
   ],
   files: [
     {
-      dataField: 'num_files',
+      dataField: 'num_project_files',
       label: 'Number of files',
       fileIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
       fileIconAlt: 'Number of files icon',
@@ -94,11 +94,11 @@ const table = {
   // Set 'display' to false to hide the table entirely
   display: true,
   // Table title
-  title: 'ARMS',
+  title: 'Task Orders',
   // Field name for table data, need to be updated only when using a different GraphQL query
-  dataField: 'studies',
+  dataField: 'task_order_id',
   // Value must be one of the 'field' in columns
-  defaultSortField: 'study_acronym',
+  defaultSortField: 'task_order_acronym',
   // 'asc' or 'desc'
   defaultSortDirection: 'asc',
   // Set 'selectableRows' to true to show the row selection
@@ -106,32 +106,31 @@ const table = {
   // A maximum of 10 columns are allowed
   columns: [
     {
-      dataField: 'study_acronym',
-      header: 'Arm',
-      link: '/arm/{study_acronym}',
+      dataField: 'task_order_acronym',
+      header: 'Task Order',
+      link: '/task_order/{task_order_acronym}',
     },
     {
-      dataField: 'study_name',
-      header: 'Arm Name',
+      dataField: 'task_order_name',
+      header: 'Task Order Name',
     },
     {
-      dataField: 'study_full_description',
-      header: 'Arm Description',
+      dataField: 'task_order_full_description',
+      header: 'Task Order Description',
     },
     {
-      dataField: 'study_type',
-      header: 'Arm Type',
+      dataField: 'task_order_type',
+      header: 'Task Order Type',
     },
     {
-      dataField: 'num_subjects',
-      header: 'Associated Cases',
+      dataField: 'projects',
+      header: 'Associated Projects',
     },
   ],
 };
-
 // --------------- GraphQL query - Retrieve program details --------------
-const GET_PROGRAM_DETAIL_DATA_QUERY = gql`
-query programDetail($program_id: String!) {
+const GET_PROGRAM_DETAIL_DATA_QUERY = gql`{
+query programDetail(program_id: String) {
   programDetail(program_id: $program_id) {
     program_acronym
     program_id
@@ -139,22 +138,26 @@ query programDetail($program_id: String!) {
     program_full_description
     institution_name
     program_external_url
-    num_subjects
-    num_files
-    num_samples
-    num_lab_procedures
-    disease_subtypes
-    diagnoses {
-      group
-      subjects
+    programs 
+    num_program_files
     }
-    studies { 
-      study_name
-      study_type
-      study_acronym
-      study_info
-      study_full_description
-      num_subjects
+    task_order { 
+      task_order_id
+      task_order_name
+      task_order_type
+      task_order_acronym
+      to_date_of_approval
+      to_start_date
+      to_end_date
+      task_order_full_description
+      task_order_short_description
+      task_order_acquisition_type
+      to_manager
+      to_state
+      to_unit_of_work
+      to_research_area
+      num_task_orders
+      to_num_files
     }
   }
 }`;

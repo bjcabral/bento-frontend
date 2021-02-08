@@ -44,25 +44,20 @@ const table = {
       header: 'Program Name',
     },
     {
-      dataField: 'start_date',
+      dataField: 'program_start_date',
       header: 'Start Date',
     },
     {
-      dataField: 'end_date',
+      dataField: 'program_end_date',
       header: 'End Date',
     },
     {
-      dataField: 'pubmed_id',
-      header: 'PubMed ID',
-      link: 'https://pubmed.ncbi.nlm.nih.gov/{pubmed_id}',
+      dataField: 'task_orders',
+      header: 'Number of Task Orders',
     },
     {
-      dataField: 'num_studies',
-      header: 'Number of ARMs',
-    },
-    {
-      dataField: 'num_subjects',
-      header: 'Associated Cases',
+      dataField: 'projects',
+      header: 'Number of Projects',
     },
   ],
 };
@@ -73,15 +68,13 @@ const GET_PROGRAMS_DATA_QUERY = gql`{
  program_acronym
  program_id
  program_name
- start_date
- end_date
- pubmed_id
- num_studies
- num_subjects
+ program_start_date
+ program_end_date
+ task_orders
+ projects
  }
 }
  `;
-
 export {
   programListingIcon,
   externalLinkIcon,

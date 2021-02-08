@@ -17,27 +17,17 @@ export const globalStatsData = [
     statAPI: 'numberOfPrograms',
   },
   {
-    statTitle: 'Arms',
+    statTitle: 'Task Orders',
     type: 'field',
     statAPI: 'numberOfStudies',
   },
   {
-    statTitle: 'Cases',
+    statTitle: 'Projects',
     type: 'field',
     statAPI: 'numberOfSubjects',
   },
   {
-    statTitle: 'samples',
-    type: 'field',
-    statAPI: 'numberOfSamples',
-  },
-  {
-    statTitle: 'Assays',
-    type: 'field',
-    statAPI: 'numberOfLabProcedures',
-  },
-  {
-    statTitle: 'files',
+    statTitle: 'Files',
     type: 'field',
     statAPI: 'numberOfFiles',
   },
@@ -48,8 +38,6 @@ export const GET_GLOBAL_STATS_DATA_QUERY = gql`{
   numberOfPrograms
   numberOfStudies
   numberOfSubjects
-  numberOfSamples
-  numberOfLabProcedures
   numberOfFiles
   }
   `;

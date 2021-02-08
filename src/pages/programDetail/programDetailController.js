@@ -14,7 +14,7 @@ const ProgramDetailContainer = ({ match }) => {
   if (error || !data || data.programDetail.program_id !== match.params.id) {
     return (
       <Typography variant="headline" color="error" size="sm">
-        {error ? `An error has occurred in loading stats component: ${error}` : 'Recieved wrong data'}
+        {error ? `An error has occurred in loading stats component: ${error}` : 'Received wrong data'}
       </Typography>
     );
   }

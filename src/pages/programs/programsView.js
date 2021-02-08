@@ -22,7 +22,7 @@ const Programs = ({ classes, data }) => {
       groupName: 'Program',
       isChecked: true,
       name: program.rowData[0],
-      section: 'Filter By Cases',
+      section: 'Filter By Projects',
     }]);
   };
 

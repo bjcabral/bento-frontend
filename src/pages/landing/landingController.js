@@ -11,7 +11,7 @@ const landingController = () => {
   if (loading) return <CircularProgress />;
   if (error) {
     return (
-      <Typography variant="h5" color="error" size="sm">
+      <Typography variant="h5" color="error" size="lg">
         {error && `An error has occurred in loading stats component: ${error}`}
       </Typography>
     );

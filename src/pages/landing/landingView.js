@@ -228,7 +228,7 @@ const styles = () => ({
   headerContent: {
     color: '#000000',
     fontFamily: 'Lato, Raleway',
-    fontSize: '16px',
+    fontSize: '32px',
     fontWeight: '500',
     lineHeight: '27px',
     marginTop: '16px',

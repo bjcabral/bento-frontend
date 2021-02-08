@@ -5,10 +5,10 @@ import gql from 'graphql-tag';
 // Tile1 Tile2 Tile3 images 293x349 px
 // Tile4 image optimum size 600x 436 px
 export const landingPageData = {
-  callToActionTitle: 'Explore, Analyze, Visualize Clinical Trial Data Sets',
-  callToActionDescription: 'Model, Store and Share your Data Sets using the Bento Framework for Data Sharing Platforms.',
+  callToActionTitle: 'Center for Technical Operations Support',
+  callToActionDescription: 'Project Management Office Administration System',
   callToActionButtonText: 'EXPLORE THE SITE',
-  callToActionLink: '/cases',
+  callToActionLink: '/project',
   landingPageHero: {
     alt: 'Alt tag1',
     img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/Hero_Graphic.png',
@@ -19,26 +19,22 @@ export const landingPageData = {
       statAPI: 'numberOfPrograms',
     },
     {
-      statTitle: 'Arms',
-      statAPI: 'numberOfStudies',
+      statTitle: 'Task Orders',
+      statAPI: 'numberOfTaskOrders',
     },
     {
-      statTitle: 'Cases',
-      statAPI: 'numberOfSubjects',
+      statTitle: 'Projects',
+      statAPI: 'numberOfProjects',
     },
     {
-      statTitle: 'samples',
-      statAPI: 'numberOfSamples',
-    },
-    {
-      statTitle: 'files',
+      statTitle: 'Files',
       statAPI: 'numberOfFiles',
     },
   ],
   tile1: {
     alt: '',
     img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileAbout.png',
-    titleText: 'The Bento Framework',
+    titleText: 'Center for Technical Operations Support',
     descriptionText: 'Effective data management is key to scientific discovery. Bento is an open source framework, developed by the Frederick National Laboratory for Cancer Research, to support the creation of data sharing platforms, that adhere to the FAIR principles of scientific data management.',
     callToActionText: 'Read More',
     callToActionLink: '/bento', // This links to the "About" static page.
@@ -47,7 +43,7 @@ export const landingPageData = {
     alt: '',
     img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileProgam.png',
     titleText: 'Programs',
-    descriptionText: 'Access data from the TAILORx clinical trial, on this data sharing platform, built on Bento.',
+    descriptionText: 'Access information related to the programs and task orders managed by CTOS.',
     callToActionText: 'View',
     callToActionLink: '/programs', // This links to the Programs Listing Page.
   },
@@ -55,15 +51,15 @@ export const landingPageData = {
     alt: '',
     img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileAnalytics.png',
     titleText: 'Resources',
-    descriptionText: 'Use Bento to build your own data sharing platform.',
+    descriptionText: 'Access a list of resources for Project Managers.',
     callToActionText: 'Read More',
     callToActionLink: '/resources', // Link to the "Resources" Static Page
   },
   tile4: {
     alt: '',
     img: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/landing/tileCases.png',
-    titleText: 'Cases',
-    descriptionText: 'Analyze cases from the TAILORx clinical trial.',
+    titleText: 'Projects',
+    descriptionText: 'Access to Project Portfolio.',
     callToActionText: 'Explore',
     callToActionLink: '/cases', // This links to the cases dashboard.
   },
@@ -72,9 +68,8 @@ export const landingPageData = {
 // --------------- GraphQL query - Retrieve Landing page data --------------
 export const GET_LANDING_PAGE_DATA_QUERY = gql`{
   numberOfPrograms
-  numberOfStudies
-  numberOfSubjects
-  numberOfSamples
+  numberOfTaskOrders
+  numberOfProjects
   numberOfFiles
   }
   `;

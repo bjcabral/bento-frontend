@@ -37,29 +37,27 @@ const ProgramView = ({ classes, data, theme }) => {
       groupName: 'Program',
       isChecked: true,
       name: programData.program_acronym,
-      section: 'Filter By Cases',
+      section: 'Filter By Programs',
     }]);
   };
 
-  const redirectToArm = (programArm) => {
+  const redirectToTaskOrder = (programTaskOrder) => {
     setSideBarToLoading();
     setDashboardTableLoading();
     singleCheckBox([{
-      datafield: 'studies',
-      groupName: 'Arm',
+      datafield: 'task_order_id',
+      groupName: 'Task Order',
       isChecked: true,
-      name: `${programArm.rowData[0]}: ${programArm.rowData[1]}`,
-      section: 'Filter By Cases',
+      name: `${programTaskOrder.rowData[0]}: ${programTaskOrder.rowData[1]}`,
+      section: 'Filter By Task Order',
     }]);
   };
 
   const stat = {
     numberOfPrograms: 1,
-    numberOfStudies: programData.num_subjects !== undefined ? programData.studies.length : 'undefined',
-    numberOfSubjects: programData.num_subjects !== undefined ? programData.num_subjects : 'undefined',
-    numberOfSamples: programData.num_samples !== undefined ? programData.num_samples : 'undefined',
-    numberOfLabProcedures: programData.num_lab_procedures !== undefined ? programData.num_lab_procedures : 'undefined',
-    numberOfFiles: programData.num_files !== undefined ? programData.num_files : 'undefined',
+    numberOfTaskOrders: programData.num_task_orders !== undefined ? programData.task_orders.length : 'undefined',
+    numberOfProjects: programData.num_projects !== undefined ? programData.num_projects : 'undefined',
+    numberOfFiles: programData.num_program_files !== undefined ? programData.numprogram_files : 'undefined',
   };
 
   const breadCrumbJson = [{
@@ -311,7 +309,7 @@ const ProgramView = ({ classes, data, theme }) => {
                   <Typography>
                     <CustomDataTable
                       data={data.programDetail[table.dataField]}
-                      columns={getColumns(table, classes, data, externalLinkIcon, '/cases', redirectToArm)}
+                      columns={getColumns(table, classes, data, externalLinkIcon, '/task_order', redirectToTaskOrder)}
                       options={getOptions(table, classes)}
                     />
                   </Typography>
