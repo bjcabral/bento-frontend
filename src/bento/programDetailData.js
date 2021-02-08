@@ -17,15 +17,9 @@ const breadCrumb = {
 
 // --------------- Aggregated count configuration --------------
 const aggregateCount = {
-<<<<<<< HEAD
   labelText: 'Programs',
-  dataField: 'programs',
+  dataField: 'num_programs',
   link: '/program',
-=======
-  labelText: 'Projects',
-  dataField: 'num_subjects',
-  link: '/cases',
->>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
   display: true,
 };
 
@@ -79,13 +73,8 @@ const leftPanel = {
 const rightPanel = {
   widget: [
     {
-<<<<<<< HEAD
       dataField: 'project_id',
       label: 'Projects',
-=======
-      dataField: 'diagnoses',
-      label: 'Task Orders',
->>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
       display: true,
     },
   ],
@@ -105,11 +94,7 @@ const table = {
   // Set 'display' to false to hide the table entirely
   display: true,
   // Table title
-<<<<<<< HEAD
   title: 'Task Orders',
-=======
-  title: 'TASK ORDERS',
->>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
   // Field name for table data, need to be updated only when using a different GraphQL query
   dataField: 'task_order_id',
   // Value must be one of the 'field' in columns
@@ -121,7 +106,6 @@ const table = {
   // A maximum of 10 columns are allowed
   columns: [
     {
-<<<<<<< HEAD
       dataField: 'task_order_acronym',
       header: 'Task Order',
       link: '/task_order/{task_order_acronym}',
@@ -141,23 +125,19 @@ const table = {
     {
       dataField: 'projects',
       header: 'Associated Projects',
-=======
-      dataField: 'study_acronym',
-      header: 'Task Order ID',
-      link: '/arm/{study_acronym}',
+      link: '/project/{project_id}',
     },
     {
-      dataField: 'study_name',
+      dataField: 'task_order_name',
       header: 'Task Order Name',
     },
     {
-      dataField: 'study_full_description',
+      dataField: 'task_order_full_description',
       header: 'Task Order Description',
     },
     {
-      dataField: 'num_subjects',
+      dataField: 'num_projects',
       header: 'Number of Projects',
->>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
     },
   ],
 };

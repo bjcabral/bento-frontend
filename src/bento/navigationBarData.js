@@ -25,16 +25,12 @@ export const navBarData = [
     link: '/programs',
   },
   {
-<<<<<<< HEAD
     labelText: 'projects',
     type: 'link',
     link: '/cases',
   },
   {
     labelText: 'Admin',
-=======
-    labelText: 'Projects',
->>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
     type: 'link',
     link: '/cases',
   },
@@ -44,13 +40,10 @@ export const navBarData = [
     dropDownLinks: [
       {
         labelText: 'CTOS',
-<<<<<<< HEAD
         link: '/bento',
       },
       {
         labelText: 'Bento',
-=======
->>>>>>> 4e15afa73bcb46ef91b2abdef61dfbc8c43a746d
         link: '/bento',
       },
       {
