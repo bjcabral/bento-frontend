@@ -1,14 +1,12 @@
 import React from 'react';
 import { AboutHeader, AboutBody } from 'bento-components';
 import { withStyles } from '@material-ui/core';
-import Stats from '../../components/Stats/AllStatsController';
 
 const AboutView = ({ classes, data }) => {
   const getImage = (imgPath, alt) => <img className={classes.img} src={imgPath != null ? imgPath : ''} alt={alt} />;
 
   return (
     <>
-      <Stats />
       <AboutHeader title={data.title} />
       <AboutBody data={{
         image: getImage(data.primaryContentImage, data.title),
@@ -22,7 +20,6 @@ const AboutView = ({ classes, data }) => {
       }}
       />
     </>
-
   );
 };
 const styles = () => ({
@@ -30,5 +27,4 @@ const styles = () => ({
     width: '100%',
   },
 });
-
 export default withStyles(styles)(AboutView);

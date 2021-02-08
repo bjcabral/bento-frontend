@@ -37,7 +37,7 @@ export const landingPageData = {
     img: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/landing/tileAboutFNL.png',
     descriptionText: 'CTO PMO is committed to excelence in service. Following the latest Project Management standards, best practices, and our expertise in Data Science, Software Engineering and Project Management we excell in our role as "Trusted Partners" for our Government client and contribution to the mission of the Frederick National Laboratory.',
     callToActionText: 'Read More',
-    callToActionLink: '/bento', // This links to the "About" static page.
+    callToActionLink: '/about', // This links to the "About" static page.
   },
   tile2: {
     alt: '',
