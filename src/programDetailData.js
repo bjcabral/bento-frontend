@@ -57,7 +57,7 @@ const leftPanel = {
       label: 'Program Description',
     },
     {
-      dataField: 'institution_name',
+      dataField: 'institution_id',
       label: 'Institution',
     },
     {
@@ -73,15 +73,15 @@ const leftPanel = {
 const rightPanel = {
   widget: [
     {
-      dataField: 'project_name',
-      label: 'Program Budget',
+      dataField: 'num_task_orders',
+      label: 'Program Operational Budget',
       display: true,
     },
   ],
   files: [
     {
-      dataField: 'num_program_files',
-      label: 'Projects',
+      dataField: 'num_prog_files',
+      label: 'Number of Program files',
       fileIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
       fileIconAlt: 'Number of files icon',
       display: true,
@@ -96,7 +96,7 @@ const table = {
   // Table title
   title: 'Task Orders',
   // Field name for table data, need to be updated only when using a different GraphQL query
-  dataField: 'task_orders',
+  dataField: 'programDetail',
   // Value must be one of the 'field' in columns
   defaultSortField: 'task_order_acronym',
   // 'asc' or 'desc'
@@ -106,9 +106,12 @@ const table = {
   // A maximum of 10 columns are allowed
   columns: [
     {
-      dataField: 'task_order_acronym',
+      dataField: 'task_order_id',
       header: 'Task Order',
-      link: '/task_order/{task_order_acronym}',
+    },
+    {
+      dataField: 'task_order_acronym',
+      header: 'Task Order Acronym',
     },
     {
       dataField: 'task_order_name',
@@ -137,18 +140,15 @@ query programDetail($program_id: String!) {
     program_id
     program_name
     program_full_description
-    institution_name
+    institution_id
     program_external_url
-    to_num_projects
-    num_task_orders
     num_prog_files
-    task_orders {
-    task_order_name
+    to_research_area
     task_order_type
     task_order_acronym
+    task_order_info
     task_order_full_description
     to_num_projects
-    }
   }
 }`;
 

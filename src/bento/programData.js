@@ -4,12 +4,12 @@ import gql from 'graphql-tag';
 // Ideal size for programListingIcon is 100x100 px
 // Ideal size for externalLinkIcon is 16x16 px
 const programListingIcon = {
-  src: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programIcon.svg',
+  src: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/program/programIcon.svg',
   alt: 'Bento program logo',
 };
 
 const externalLinkIcon = {
-  src: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/externalLinkIcon.svg',
+  src: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/program/externalLinkIcon.svg',
   alt: 'External link icon',
 };
 
@@ -52,7 +52,7 @@ const table = {
       header: 'End Date',
     },
     {
-      dataField: 'task_orders',
+      dataField: 'num_task_orders',
       header: 'Number of Task Orders',
     },
     {
@@ -70,11 +70,12 @@ const GET_PROGRAMS_DATA_QUERY = gql`{
  program_name
  program_start_date
  program_end_date
- task_orders
- projects
+ num_task_orders 
+ num_projects 
  }
 }
  `;
+
 export {
   programListingIcon,
   externalLinkIcon,

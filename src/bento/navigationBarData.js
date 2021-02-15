@@ -25,25 +25,31 @@ export const navBarData = [
     link: '/programs',
   },
   {
-    labelText: 'projects',
+    labelText: 'Projects',
     type: 'link',
-    link: '/cases',
+    link: '/project',
+  },
+  {
+    labelText: 'Subcontracts',
+    type: 'link',
+    link: '/subcontracts',
   },
   {
     labelText: 'Admin',
     type: 'link',
-    link: '/cases',
+    link: '/admin',
+  },
+  {
+    labelText: 'Resources',
+    type: 'link',
+    link: '/resources',
   },
   {
     labelText: 'about',
     type: 'dropdown',
     dropDownLinks: [
       {
-        labelText: 'CTOS',
-        link: '/bento',
-      },
-      {
-        labelText: 'Bento',
+        labelText: 'CTOS PMO',
         link: '/bento',
       },
       {

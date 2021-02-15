@@ -4,37 +4,43 @@ import gql from 'graphql-tag';
 // A maximum of 12 facetSearchData are allowed
 export const facetSearchData = [
   {
-    label: 'Program', field: 'group', api: 'subjectCountByProgram', apiForFiltering: 'filterSubjectCountByProgram', datafield: 'programs', section: 'Filter By Projects', show: true,
+    label: 'Program', field: 'group', api: 'subjectCountByProgram', apiForFiltering: 'filterSubjectCountByProgram', datafield: 'programs', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Project ID', field: 'group', api: 'subjectCountByStudy', apiForFiltering: 'filterSubjectCountByStudy', datafield: 'studies', section: 'Filter By Projects', show: true,
+    label: 'Arm', field: 'group', api: 'subjectCountByStudy', apiForFiltering: 'filterSubjectCountByStudy', datafield: 'studies', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Project Name', field: 'group', api: 'subjectCountByDiagnoses', apiForFiltering: 'filterSubjectCountByDiagnoses', datafield: 'diagnoses', section: 'Filter By Projects', show: true,
+    label: 'Diagnosis', field: 'group', api: 'subjectCountByDiagnoses', apiForFiltering: 'filterSubjectCountByDiagnoses', datafield: 'diagnoses', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Research Area', field: 'group', api: 'subjectCountByRecurrenceScore', apiForFiltering: 'filterSubjectCountByRecurrenceScore', datafield: 'rc_scores', section: 'Filter By Projects', show: true,
+    label: 'Recurrence Score', field: 'group', api: 'subjectCountByRecurrenceScore', apiForFiltering: 'filterSubjectCountByRecurrenceScore', datafield: 'rc_scores', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'UoW', field: 'group', api: 'subjectCountByTumorSize', apiForFiltering: 'filterSubjectCountByTumorSize', datafield: 'tumor_sizes', section: 'Filter By Projects', show: true,
+    label: 'Tumor Size', field: 'group', api: 'subjectCountByTumorSize', apiForFiltering: 'filterSubjectCountByTumorSize', datafield: 'tumor_sizes', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Approved Budget', field: 'group', api: 'subjectCountByChemotherapyRegimen', apiForFiltering: 'filterSubjectCountByChemotherapyRegimen', datafield: 'chemo_regimen', section: 'Filter By Projects', show: true,
+    label: 'Chemotherapy', field: 'group', api: 'subjectCountByChemotherapyRegimen', apiForFiltering: 'filterSubjectCountByChemotherapyRegimen', datafield: 'chemo_regimen', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Funded Amount', field: 'group', api: 'subjectCountByTumorGrade', apiForFiltering: 'filterSubjectCountByTumorGrade', datafield: 'tumor_grades', section: 'Filter By Projects', show: true,
+    label: 'Tumor Grade', field: 'group', api: 'subjectCountByTumorGrade', apiForFiltering: 'filterSubjectCountByTumorGrade', datafield: 'tumor_grades', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Cost-to-Date', field: 'group', api: 'subjectCountByErStatus', apiForFiltering: 'filterSubjectCountByErStatus', datafield: 'er_status', section: 'Filter By Projects', show: true,
+    label: 'ER Status', field: 'group', api: 'subjectCountByErStatus', apiForFiltering: 'filterSubjectCountByErStatus', datafield: 'er_status', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'ETC', field: 'group', api: 'subjectCountByPrStatus', apiForFiltering: 'filterSubjectCountByPrStatus', datafield: 'pr_status', section: 'Filter By Projects', show: true,
+    label: 'PR Status', field: 'group', api: 'subjectCountByPrStatus', apiForFiltering: 'filterSubjectCountByPrStatus', datafield: 'pr_status', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Project Manager', field: 'group', api: 'subjectCountByEndocrineTherapy', apiForFiltering: 'filterSubjectCountByEndocrineTherapy', datafield: 'endo_therapies', section: 'Filter By Projects', show: true,
+    label: 'Endocrine Therapy', field: 'group', api: 'subjectCountByEndocrineTherapy', apiForFiltering: 'filterSubjectCountByEndocrineTherapy', datafield: 'endo_therapies', section: 'Filter By Cases', show: true,
   },
   {
-    label: 'Government POC', field: 'group', api: 'subjectCountByMenopauseStatus', apiForFiltering: 'filterSubjectCountByMenopauseStatus', datafield: 'meno_status', section: 'Filter By Projects', show: true,
+    label: 'Menopause Status', field: 'group', api: 'subjectCountByMenopauseStatus', apiForFiltering: 'filterSubjectCountByMenopauseStatus', datafield: 'meno_status', section: 'Filter By Cases', show: true,
+  },
+  {
+    label: 'Tissue Type', field: 'group', api: 'subjectCountByTissueType', apiForFiltering: 'filterSubjectCountByTissueType', datafield: 'tissue_type', section: 'Filter By Samples', show: true,
+  },
+  {
+    label: 'Tissue Composition', field: 'group', api: 'subjectCountByTissueComposition', apiForFiltering: 'filterSubjectCountByTissueComposition', datafield: 'composition', section: 'Filter By Samples', show: true,
   },
   {
     label: 'File Association', field: 'group', api: 'subjectCountByFileAssociation', apiForFiltering: 'filterSubjectCountByFileAssociation', datafield: 'association', section: 'Filter By Files', show: true,
@@ -42,20 +48,16 @@ export const facetSearchData = [
   {
     label: 'File Type', field: 'group', api: 'subjectCountByFileType', apiForFiltering: 'filterSubjectCountByFileType', datafield: 'file_type', section: 'Filter By Files', show: true,
   },
-
-  {
-    label: 'Project ID', field: 'group', api: 'subjectCountByFileType', apiForFiltering: 'filterSubjectCountByFileType', datafield: 'file_type', section: 'Filter By Files', show: true,
-  },
-
-  {
-    label: 'Task Order', field: 'group', api: 'subjectCountByStudy', apiForFiltering: 'filterSubjectCountByStudy', datafield: 'study_acronym', section: 'Filter By Projects', show: true,
-  },
 ];
 
 // --------------- Dashboard Sidebar Sections styling --------------
 export const facetSectionVariables = {
-  'Filter By Projects': {
+  'Filter By Cases': {
     color: '#10A075',
+    height: '5px',
+  },
+  'Filter By Samples': {
+    color: '#10BEFF',
     height: '5px',
   },
   'Filter By Files': {
@@ -69,7 +71,7 @@ export const facetSectionVariables = {
 export const widgetsData = [
   {
     type: 'sunburst',
-    label: 'Programs',
+    label: 'Programs and Arms',
     dataName: 'armsByPrograms',
     datatable_level1_field: 'program',
     datatable_level2_field: 'study_acronym',
@@ -77,35 +79,35 @@ export const widgetsData = [
   },
   {
     type: 'donut',
-    label: 'Projects',
+    label: 'Diagnosis',
     dataName: 'subjectCountByDiagnoses',
     datatable_field: 'diagnosis',
     show: true,
   },
   {
     type: 'donut',
-    label: 'Severable Projects',
+    label: 'Recurrence Score',
     dataName: 'subjectCountByRecurrenceScore',
     datatable_field: 'recurrence_score',
     show: true,
   },
   {
     type: 'donut',
-    label: 'Non-severable Projects',
+    label: 'Tumor Size',
     dataName: 'subjectCountByTumorSize',
     datatable_field: 'tumor_size',
     show: true,
   },
   {
     type: 'donut',
-    label: 'Projects Status',
+    label: 'Chemotherapy',
     dataName: 'subjectCountByChemotherapyRegimen',
     datatable_field: 'chemotherapy',
     show: true,
   },
   {
     type: 'donut',
-    label: 'Other Projects',
+    label: 'Endocrine Therapy',
     dataName: 'subjectCountByEndocrineTherapy',
     datatable_field: 'endocrine_therapy',
     show: true,
@@ -121,12 +123,12 @@ export const externalLinkIcon = {
 
 // --------------- Dashboard Table configuration --------------
 export const dashboardTable = {
-  tableTitle: 'Projects',
+  tableTitle: 'Cases',
   tableData: [
     // A maximum of 10 columns (tableData) are allowed
     {
       dataField: 'subject_id',
-      header: 'Project ID',
+      header: 'Case ID',
       sort: 'asc',
       link: '/case/{subject_id}',
       primary: true,
@@ -147,49 +149,49 @@ export const dashboardTable = {
     },
     {
       dataField: 'study_acronym',
-      header: 'Project Name',
+      header: 'Arm',
       sort: 'asc',
       link: '/arm/{study_acronym}',
       display: true,
     },
     {
       dataField: 'diagnosis',
-      header: 'Project Name',
+      header: 'Diagnosis',
       sort: 'asc',
       display: true,
     },
     {
       dataField: 'recurrence_score',
-      header: 'Research Area',
+      header: 'Recurrence Score',
       sort: 'asc',
       display: true,
     },
     {
       dataField: 'tumor_size',
-      header: 'UoW',
+      header: 'Tumor Size (cm)',
       sort: 'asc',
       display: true,
     },
     {
       dataField: 'er_status',
-      header: 'Approved Budget',
+      header: 'ER Status',
       sort: 'asc',
       display: true,
     },
     {
       dataField: 'pr_status',
-      header: 'Funded',
+      header: 'PR Status',
       sort: 'asc',
       display: true,
     },
     {
       dataField: 'age_at_index',
-      header: 'Cost-to-date',
+      header: 'Age (years)',
       sort: 'asc',
       display: true,
     },
     {
-      dataField: 'ETC',
+      dataField: 'survival_time',
       header: 'Survival (days)',
       sort: 'asc',
       display: true,

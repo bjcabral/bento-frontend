@@ -56,8 +56,8 @@ const ProgramView = ({ classes, data, theme }) => {
   const stat = {
     numberOfPrograms: 1,
     numberOfTaskOrders: programData.num_task_orders !== undefined ? programData.task_orders.length : 'undefined',
-    numberOfProjects: programData.num_projects !== undefined ? programData.num_projects : 'undefined',
-    numberOfFiles: programData.num_program_files !== undefined ? programData.numprogram_files : 'undefined',
+    numberOfProjects: programData.to_num_projects !== undefined ? programData.to_num_projects : 'undefined',
+    numberOfFiles: programData.num_prog_files !== undefined ? programData.num_prog_files : 'undefined',
   };
 
   const breadCrumbJson = [{

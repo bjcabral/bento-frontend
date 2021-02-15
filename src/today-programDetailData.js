@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 // --------------- Page title configuration --------------
 const pageTitle = {
   label: 'Program :',
@@ -18,8 +17,7 @@ const breadCrumb = {
 // --------------- Aggregated count configuration --------------
 const aggregateCount = {
   labelText: 'Task Orders',
-  dataField: 'num_task_orders',
-  link: '/task_order',
+  dataField: 'num_prog_files',
   display: true,
 };
 
@@ -57,7 +55,7 @@ const leftPanel = {
       label: 'Program Description',
     },
     {
-      dataField: 'institution_name',
+      dataField: 'institution_id',
       label: 'Institution',
     },
     {
@@ -73,15 +71,15 @@ const leftPanel = {
 const rightPanel = {
   widget: [
     {
-      dataField: 'project_name',
-      label: 'Program Budget',
+      dataField: 'num_prog_files',
+      label: 'Program Operational Budget',
       display: true,
     },
   ],
   files: [
     {
-      dataField: 'num_program_files',
-      label: 'Projects',
+      dataField: 'num_prog_files',
+      label: 'Number of Program files',
       fileIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
       fileIconAlt: 'Number of files icon',
       display: true,
@@ -106,25 +104,41 @@ const table = {
   // A maximum of 10 columns are allowed
   columns: [
     {
-      dataField: 'task_order_acronym',
+      dataField: 'task_order_id',
       header: 'Task Order',
-      link: '/task_order/{task_order_acronym}',
+      link: '/task_order/{task_order_id}',
+    },
+    {
+      dataField: 'task_order_acronym',
+      header: 'Task Order Acronym',
     },
     {
       dataField: 'task_order_name',
       header: 'Task Order Name',
     },
     {
-      dataField: 'task_order_full_description',
-      header: 'Task Order Description',
+      dataField: 'task_order_short_description',
+      header: 'Description',
     },
     {
       dataField: 'task_order_type',
       header: 'Task Order Type',
     },
     {
-      dataField: 'to_num_projects',
-      header: 'Associated Projects',
+      dataField: 'to_date_of_approval',
+      header: 'Approval Date',
+    },
+    {
+      dataField: 'to_manager',
+      header: 'Task Order Manager',
+    },
+    {
+      dataField: 'to_unit_of_work',
+      header: 'Unit of Work',
+    },
+    {
+      dataField: 'to_research_area',
+      header: 'Research Area',
     },
   ],
 };
@@ -137,17 +151,20 @@ query programDetail($program_id: String!) {
     program_id
     program_name
     program_full_description
-    institution_name
+    institution_id
     program_external_url
     to_num_projects
-    num_task_orders
     num_prog_files
     task_orders {
+    task_order_id
     task_order_name
-    task_order_type
     task_order_acronym
-    task_order_full_description
-    to_num_projects
+    task_order_type
+    to_date_of_approval
+    to_manager
+    to_unit_of_work
+    to_research_area
+    task_order_short_description
     }
   }
 }`;
@@ -161,6 +178,6 @@ export {
   rightPanel,
   externalLinkIcon,
   breadCrumb,
-  GET_PROGRAM_DETAIL_DATA_QUERY,
   table,
+  GET_PROGRAM_DETAIL_DATA_QUERY,
 };

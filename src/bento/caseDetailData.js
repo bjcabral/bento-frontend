@@ -10,7 +10,7 @@ export const tooltipContent = {
 
 // -------------- Case ID area configurations --------------
 const caseHeader = {
-  label: 'Project ID',
+  label: 'Case ID',
   dataField: 'subject_id',
 };
 
@@ -34,77 +34,85 @@ const leftPanel = [
         // external links must have URL scheme part such as "https://"
       },
       {
-        label: 'Project',
+        label: 'Arm',
         dataField: 'study_acronym',
         link: '/arm/{study_acronym}',
       },
       {
-        label: 'Project Description',
+        label: 'Arm Description',
         dataField: 'study_name',
       },
     ],
   },
   {
-    sectionHeader: 'Project Basic Infomration',
+    sectionHeader: 'Demographics',
     // sectionDesc: 'Demographic Related Info',
     properties: [
       // A maximum of 10 properties are allowed
       {
-        label: 'Project Start Date',
+        label: 'Gender',
         dataField: 'gender',
       },
       {
-        label: 'Project Manager',
+        label: 'Race',
         dataField: 'race',
       },
       {
-        label: 'Government Sponsor Org.',
+        label: 'Ethnicity',
         dataField: 'ethnicity',
       },
       {
-        label: 'Government Sponsor POC',
+        label: 'Age At Enrollment',
         dataField: 'age_at_index',
       },
       {
-        label: 'Government Project Manager',
+        label: 'Menopause Status',
         dataField: 'menopause_status',
       },
       {
-        label: 'Project Ending Date',
+        label: 'Vital Status',
         dataField: 'vital_status',
+      },
+      {
+        label: 'Cause Of Death',
+        dataField: 'cause_of_death',
       },
     ],
   },
   {
-    sectionHeader: 'Project Finances',
+    sectionHeader: 'Diagnosis',
     // sectionDesc: 'Diagnosis Related Info',
     properties: [
       {
-        label: 'Funding Source',
+        label: 'Diagnosis',
         dataField: 'disease_type',
       },
       {
-        label: 'Approved Budget',
+        label: 'Diagnosis Subtype',
         dataField: 'disease_subtype',
       },
       {
-        label: 'Funding Level',
+        label: 'Tumor Grade',
         dataField: 'tumor_grade',
       },
       {
-        label: 'Cost-to-Date',
+        label: 'Tumor Grade (mm)',
         dataField: 'tumor_largest_dimension_diameter',
       },
       {
-        label: 'Estimate To Completion',
+        label: 'ER Status',
         dataField: 'er_status',
       },
       {
-        label: 'Estimat At complition',
+        label: 'PR Status',
         dataField: 'pr_status',
       },
       {
-        label: 'Funding Expiration',
+        label: 'Nuclear Grade',
+        dataField: 'nuclear_grade',
+      },
+      {
+        label: 'Recurrence Score',
         dataField: 'recurrence_score',
       },
     ],
@@ -115,70 +123,60 @@ const rightPanel = [
   // Each object here represents a subsection in the panel
   // A maximum of 3 subsections are allowed
   {
-    sectionHeader: 'Project Status',
-    // sectionDesc: 'Project Related Info',
+    sectionHeader: 'Treatment',
+    // sectionDesc: 'Treatment Related Info',
     properties: [
       // A maximum of 10 properties are allowed
       {
-        label: 'Project Current Activities',
+        label: 'Primary Surgical Procedure',
         dataField: 'primary_surgical_procedure',
       },
       {
-        label: 'Last Month Activities',
+        label: 'Chemotherapy Regimen Group',
         dataField: 'chemotherapy_regimen_group',
       },
       {
-        label: 'Next Month Activities',
+        label: 'Chemotherapy Regimen',
         dataField: 'chemotherapy_regimen',
       },
-    ],
-  },
-
-  {
-    sectionHeader: 'Project Subcontracts Info.',
-    // sectionDesc: 'Project Subcontract Info', properties: [
-    // A maximum of 10 properties are allowed
-    properties: [
       {
-        label: 'Project Subcontracts',
-        dataField: 'primary_surgical_procedure',
-      },
-      {
-        label: 'Subcontract Value',
-        dataField: 'chemotherapy_regimen_group',
-      },
-      {
-        label: 'Subcontract Current Cost',
-        dataField: 'chemotherapy_regimen',
-      },
-
-      {
-        label: 'Subcontract Expiration Date',
+        label: 'Endocrine Therapy Type',
         dataField: 'endocrine_therapy_type',
       },
-
-      {
-        label: 'Subcontract POC',
-        dataField: 'test_name',
-      },
     ],
   },
   {
-    sectionHeader: 'Project Issues',
+    sectionHeader: 'Follow Up',
     // sectionDesc: 'Follow Up Related Info',
     properties: [
       // A maximum of 10 properties are allowed
       {
-        label: 'Issue Description',
+        label: 'Is Disease Free',
         dataField: 'dfs_event_indicator',
       },
       {
-        label: 'Issue Level',
+        label: 'Is Recurrence Free',
         dataField: 'recurrence_free_indicator',
       },
       {
-        label: 'Mitigation Strategy',
+        label: 'Is Distant Recurrence Free',
         dataField: 'distant_recurrence_indicator',
+      },
+      {
+        label: 'Disease Free Event Type',
+        dataField: 'dfs_event_type',
+      },
+      {
+        label: 'Recurrence Event Type',
+        dataField: 'first_recurrence_type',
+      },
+      {
+        label: 'Days to Progression',
+        dataField: 'days_to_progression',
+      },
+      {
+        label: 'Days to Recurrence',
+        dataField: 'days_to_recurrence',
       },
     ],
   },
@@ -194,7 +192,7 @@ export const externalLinkIcon = {
 // --------------- Table 1 configuration --------------
 const table1 = {
   // Set 'display' to false to hide the table entirely
-  display: false,
+  display: true,
   // Table title
   tableTitle: 'ASSOCIATED SAMPLES',
   // Field name for files data, need to be updated only when using a different GraphQL query
@@ -279,7 +277,7 @@ const table2 = {
   // Set 'display' to false to hide the table entirely
   display: true,
   // Table title
-  tableTitle: 'PROJECT ASSOCIATED FILES',
+  tableTitle: 'ASSOCIATED FILES',
   // Field name for files data, need to be updated only when using a different GraphQL query
   subjectDetailField: 'files',
   // Value must be one of the 'dataField's in fileTableColumns

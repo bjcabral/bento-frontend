@@ -11,6 +11,7 @@ const ProgramDetailContainer = ({ match }) => {
   });
 
   if (loading) return <CircularProgress />;
+
   if (error || !data || data.programDetail.program_id !== match.params.id) {
     return (
       <Typography variant="headline" color="error" size="sm">

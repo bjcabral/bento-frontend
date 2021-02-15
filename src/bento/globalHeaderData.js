@@ -5,6 +5,6 @@ import Easter from '../assets/header/headerGraphic.png';
 export default {
   globalHeaderLogo: 'https://raw.githubusercontent.com/bjcabral/bento-frontend/master/src/assets/header/protrac-logo.png',
   globalHeaderLogoLink: '/',
-  globalHeaderLogoAltText: 'Protrac Logo',
+  globalHeaderLogoAltText: 'Bento Logo',
   globalHeaderImage: Easter,
 };
