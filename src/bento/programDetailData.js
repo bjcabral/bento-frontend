@@ -19,7 +19,7 @@ const breadCrumb = {
 const aggregateCount = {
   labelText: 'Task Orders',
   dataField: 'num_task_orders',
-  link: '/task_order',
+  link: '/taskOrders',
   display: true,
 };
 
@@ -57,7 +57,7 @@ const leftPanel = {
       label: 'Program Description',
     },
     {
-      dataField: 'institution_name',
+      dataField: 'institution_id',
       label: 'Institution',
     },
     {
@@ -73,14 +73,14 @@ const leftPanel = {
 const rightPanel = {
   widget: [
     {
-      dataField: 'project_name',
+      dataField: 'num_to_projects',
       label: 'Program Budget',
       display: true,
     },
   ],
   files: [
     {
-      dataField: 'num_program_files',
+      dataField: 'num_prog_files',
       label: 'Projects',
       fileIconSrc: 'https://raw.githubusercontent.com/CBIIT/bento-frontend/master/src/assets/program/programNumberofFilesIcon.svg',
       fileIconAlt: 'Number of files icon',
@@ -108,7 +108,11 @@ const table = {
     {
       dataField: 'task_order_acronym',
       header: 'Task Order',
-      link: '/task_order/{task_order_acronym}',
+      link: '/taskOrders/{task_order_acronym}',
+    },
+    {
+      dataField: 'task_order_id',
+      header: 'Task Order ID',
     },
     {
       dataField: 'task_order_name',
@@ -119,8 +123,16 @@ const table = {
       header: 'Task Order Description',
     },
     {
+      dataField: 'to_date_of_approval',
+      header: 'Approved',
+    },
+    {
       dataField: 'task_order_type',
       header: 'Task Order Type',
+    },
+    {
+      dataField: 'to_manager',
+      header: 'Task Order Manager',
     },
     {
       dataField: 'to_num_projects',
@@ -136,20 +148,29 @@ query programDetail($program_id: String!) {
     program_acronym
     program_id
     program_name
+    institution_id
     program_full_description
-    institution_name
     program_external_url
-    to_num_projects
     num_task_orders
     num_prog_files
+    to_num_projects
     task_orders {
+    task_order_id
     task_order_name
     task_order_type
     task_order_acronym
-    task_order_full_description
+    to_date_of_approval
+    to_start_date
+    to_end_date
+    to_manager
+    to_state
+    to_acquisition_type
+    to_unit_of_work
+    to_research_area
     to_num_projects
-    }
-  }
+    task_order_full_description
+    } 
+ }
 }`;
 
 export {
